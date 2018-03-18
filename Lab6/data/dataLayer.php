@@ -8,7 +8,7 @@
         $servername = "localhost";
         $username = "root";
         $password = "root";
-        $dbname = "LoginSystem";
+        $dbname = "MelissaTrevino";
         $conn = new mysqli($servername, $username, $password, $dbname);
         
         if ($conn->connect_error) {
@@ -60,20 +60,28 @@
 
         # Validate that there's a connection to the database.
         if($connection != null){
-            # Query to add a new user.
-            $sql = "INSERT INTO Users(fName, lName, username, passwrd, email)
-                    VALUES ('$uFname', '$uLname', '$uName', '$uPassword', '$uEmail')";
-            
-            # Executes the query.
-            $resultDB = $connection->query($sql);
-            
-            if($resultDB->num_rows > 0){
-                # Registration was successful.
-                $response = ["status" => "SUCCESS"];
-                return $response;
+
+            # Validate that the user is not already in use.
+            $sql = "SELECT username FROM Users WHERE username = '$uName'";
+            $result = $conn->query($sql);
+
+            if ($result->num_rows > 0) {
+                # Username already in use.
+                return ["status" => "409"];
             } else {
-                # Registration was unsuccessful.
-                return ["status" => "406"];
+                # Query to add a new user.
+                $sql = "INSERT INTO Users(fName, lName, username, passwrd, email)
+                        VALUES ('$uFname', '$uLname', '$uName', '$uPassword', '$uEmail')";
+                $result = $conn->query($sql);
+
+                if($result->num_rows > 0){
+                    # Registration was successful.
+                    $response = ["username"=>$row["username"],"firstname"=>$row["fName"], "lastname"=>$row["lName"], "status" => "SUCCESS"];
+                    return $response;
+                } else {
+                    # Registration was unsuccessful.
+                    return ["status" => "406"];
+                }
             }
         } else {
             # Database connection was unsuccessful.
