@@ -55,7 +55,6 @@ function loadComments(){
 			$("#commentLogTable tbody").append(tableElements);
 	
 		}, error: function (error) {
-			console.log("error: ", error);
 		}
 	});
 }
@@ -108,7 +107,6 @@ function postComment(username, fromModal){
 		"commentText" : commentText,
 		"username" : username
 	}
-	console.log(jsonToSend);
 
 	$.ajax({
 		url : "./data/postComment.php",

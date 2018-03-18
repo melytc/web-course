@@ -2,7 +2,6 @@ $(document).ready(function() {
 	
 	// User is automatically logged in upon registration (process is done on the server)			
 	$("#registerButton").on("click", function() {
-		
 		var jsonObject = {
 			"uUsername" : $("#username").val(),
 			"uPassword" : $("#userPassword").val(),
@@ -10,19 +9,24 @@ $(document).ready(function() {
 			"uLastName" : $("#lastName").val(),
 			"uEmail" : $("#email").val()
 		};
+		console.log("Clicked the registration button.");
+
 		$.ajax({
 			type: "POST",
-			url: "./data/registration.php",
+			url: "./data/applicationLayer.php",
 			data : jsonObject,
 			dataType : "json",
 			success: function(jsonData) {
-				if(jsonData.success){
+				console.log("success function");
+				if(jsonData.status == "SUCCESS"){
+					alert("You are registered!");
 					window.location.replace("home.html");	
 				} else {
-					console.log("There was an error when registering.");
+					alert("There was an error when registering, please try again.");
 				}
 			},
 			error: function(errorMsg) {
+				console.log("error function");
 				alert(errorMsg.statusText);
 			}
 		});
@@ -31,5 +35,4 @@ $(document).ready(function() {
 	$("#cancelButton").on("click", function() {
 		window.location.replace("login.html");
 	});
-	
 });

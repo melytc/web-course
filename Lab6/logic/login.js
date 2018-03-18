@@ -32,8 +32,8 @@ $(document).ready(function(){
 				url : "./data/applicationLayer.php",
 				type : "POST",
 				data : jsonToSend,
-				ContentType : "application/json",
 				dataType : "json",
+				ContentType : "application/json",
 				success : function(dataReceived){
 					if(dataReceived.status == 'SUCCESS') {
 						alert("Welcome back " + dataReceived.firstname + " " + dataReceived.lastname);

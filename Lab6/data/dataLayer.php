@@ -20,7 +20,7 @@
 
     # dbLogin
     # Function to perform a login into the database.
-    # Returns the response ($response) if the database found a user, and a corresponding error encapsulated in an array if user was not found or the connection was unsuccessful (with the key "status").
+    # Returns the response ($response) if the database found a user, or the corresponding error encapsulated in an array if user was not found or the connection was unsuccessful (with the key "status").
     function dbLogin($uName, $uPassword){
         $connection = connectionDB();
 
@@ -44,7 +44,36 @@
 
             } else {
                 # User was not found on the database.
-                return ["status"=>"406"];
+                return ["status" => "406"];
+            }
+        } else {
+            # Database connection was unsuccessful.
+            return ["status" => "500"];
+        }
+    }
+
+    # dbRegister
+    # Function to perform a register of a new user into the database.
+    # Returns the response ($response) if the registration was successful, or the corresponding error encapsulated in an array if user could not be registered or the connection was unsuccessful (with the key "status").
+    function dbRegister($uFname, $uLname, $uName, $uPassword, $uEmail){
+        $connection = connectionDB();
+
+        # Validate that there's a connection to the database.
+        if($connection != null){
+            # Query to add a new user.
+            $sql = "INSERT INTO Users(fName, lName, username, passwrd, email)
+                    VALUES ('$uFname', '$uLname', '$uName', '$uPassword', '$uEmail')";
+            
+            # Executes the query.
+            $resultDB = $connection->query($sql);
+            
+            if($resultDB->num_rows > 0){
+                # Registration was successful.
+                $response = ["status" => "SUCCESS"];
+                return $response;
+            } else {
+                # Registration was unsuccessful.
+                return ["status" => "406"];
             }
         } else {
             # Database connection was unsuccessful.

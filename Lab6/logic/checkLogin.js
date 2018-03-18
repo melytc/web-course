@@ -5,7 +5,6 @@ $(document).ready(function(){
 		type : "GET",
 		dataType : "json",
 		success : function(dataReceived){
-			console.log(dataReceived);
 			if(!dataReceived.fName){
 				// User is not logged in.
 				$("#login").css("display", "block");
@@ -19,7 +18,6 @@ $(document).ready(function(){
 			}
 		},
 		error : function(errorMessage){
-			console.error(errorMessage);
 		}
 	});
 });

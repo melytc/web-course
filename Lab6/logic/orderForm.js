@@ -80,7 +80,6 @@ function loadMenu(){
 
        },
        error: function(errorMessage){
-           console.log("Error when loading menu data: " + errorMessage);
        }
    });
 }

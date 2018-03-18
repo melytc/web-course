@@ -8,9 +8,9 @@
     require_once __DIR__ . '/dataLayer.php';
 
     # Instruction for debugging.
-    # ini_set('display_errors', 1);
-    # ini_set('log_errors', 1);
-    # error_reporting(E_ALL);
+    ini_set('display_errors', 1);
+    ini_set('log_errors', 1);
+    error_reporting(E_ALL);
 
     # This parameter is sent from frontend in order to know what to do.
     $action = $_POST["action"];
@@ -22,11 +22,14 @@
         case 'LOGOUT':
             endSession();
             break;
+        case 'REGISTER':
+            attemptRegister();
+            break;
     }
 
     # attemptLogin
     # Function that will attempt performing a login with the uName and uPassword.
-    # Returns the result as a json_encode, or calls the function handleError when error occurs.
+    # Returns the result as a json_encode, or calls the function handleError when an error occurs.
     function attemptLogin(){
         # Receive the login and password from frontend.
         $uName = $_POST["uName"];
@@ -46,7 +49,7 @@
     }
 
     # startSession
-    # Function that will enable saving a session when logged-in.
+    # Function that will enable saving a session when logged-in or when registered.
     function startSession($result){
         // Session is started.
         session_start();
@@ -80,10 +83,16 @@
                 die("The server is down, we couldn't establish the data base connection.");
                 break;
             
-            case '406':
+            case '404':
                 # User was not found.
                 header("HTTP/1.1 404 Not found: User not found.");
                 die("Wrong credentials provided.");
+                break;
+
+            case '406':
+                # User could not be registered.
+                header("HTTP/1.1 406 Not acceptable: User not registered.");
+                die("Could not add new user, please try again.");
                 break;
 
             default:
@@ -93,3 +102,27 @@
                 break;
         }
     }
+
+    # attemptRegister
+    # Function that will attempt performing a registration with the necessary variables.
+    # Returns the result as a json_encode, or calls the function handleError when an error occurs.
+    function attemptRegister(){
+        # Receive the variables needed to register a user.
+        $uFname = $_POST["uFirstName"];
+        $uLname = $_POST["uLastName"];
+        $uName = $_POST["uUsername"];
+        $uPassword = $_POST["uPassword"];
+        $uEmail = $_POST["uEmail"];
+
+        $result = dbRegister($uFname, $uLname, $uName, $uPassword, $uEmail);
+
+        if($result["status"] == "SUCCESS"){
+            startSession($result);
+            echo json_encode($result);
+        } else {
+            # For all error handling.
+            handleError($result["status"]);
+        }
+    }
+
+?>
