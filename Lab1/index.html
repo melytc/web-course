@@ -1,0 +1,80 @@
+<html>
+	<head>
+		<title>Mr. Burger</title>
+		
+		<meta charset="utf-8">
+		<meta name="keywords" content="burger, food, delicious">
+		<meta name="author" content="Melissa Treviño">
+
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+	<body>
+		<img src="assets/logo.png">
+		<h4>Burgers and fries, <br>the way they were <span style="font-weight: bold">always</span> meant to be.</h4>
+		<div id="orderDiv">
+			<form>
+
+			<h5>Choose a type of burger:</h5>
+			<select>
+				<option name="burgerType" value="typeHamburger"> Hamburger</option>
+				<option name="burgerType" value="typeCheeseburger"> Cheeseburger</option>
+				<option name="burgerType" value="typeBaconBurger"> Bacon burger</option>
+				<option name="burgerType" value="typeBaconCheeseBurger"> Bacon cheeseburger</option>
+			</select>
+
+			<h5>Choose a type of bread:</h5>
+
+			<input type="radio" name="breadType" value="typeWholemealBread">Wholemeal Bread <br>
+			<input type="radio" name="breadType" value="typeWhiteBread">White Bread <br>
+			<input type="radio" name="breadType" value="typeRyeBread">Rye Bread <br>
+
+			<h5>Choose the size of your burger:</h5>
+			<input type="radio" name="burgerSize" value="sizeBig">Big <br>
+			<input type="radio" name="burgerSize" value="sizeMedium">Medium <br>
+			<input type="radio" name="burgerSize" value="sizeSmall">Small <br>
+
+			<h5>Wanna add...</h5>
+			<input type="checkbox" name="burgerCondiment" value="mayoPlease">Mayo <br>
+			<input type="checkbox" name="burgerCondiment" value="ketchupPlease">Ketchup <br>
+			<input type="checkbox" name="burgerCondiment" value="mustardPlease">Mustard <br>
+
+			<h5>Toppings?</h5>
+			<fieldset>
+				<input type="checkbox" name="burgerToppings" value="toppTomato">Tomato <br>
+				<input type="checkbox" name="burgerToppings" value="toppLettuce">Lettuce <br>
+				<input type="checkbox" name="burgerToppings" value="toppOnion">Onion <br>
+				<input type="checkbox" name="burgerToppings" value="toppPickles">Pickles <br>
+				<input type="checkbox" name="burgerToppings" value="toppAvocado">Avocado <br>
+				<input type="checkbox" name="burgerToppings" value="toppRelish">Relish <br>
+				<input type="checkbox" name="burgerToppings" value="toppPeppers">Peppers <br>
+				<input type="checkbox" name="burgerToppings" value="toppJalapenos">Jalapeños <br>
+				<input type="checkbox" name="burgerToppings" value="toppMushrooms">Mushrooms <br>
+				<input type="checkbox" name="burgerToppings" value="toppExtraCheese">Extra cheese <br>
+				<input type="checkbox" name="burgerToppings" value="toppGrilledOnions">Grilled onions <br>
+				<input type="checkbox" name="burgerToppings" value="toppGrilledMushrooms">Grilled mushrooms <br>
+				<input type="checkbox" name="burgerToppings" value="toppGrilledPeppers">Grilled peppers <br>
+				<input type="checkbox" name="burgerToppings" value="toppGrilledJalapenos">Grilled jalapeños <br>
+			</fieldset>
+
+			<h5>Sauce?</h5>
+			<input type="checkbox" name="burgerSauce" value="sauceSpeciality">Mr. Burger Specialty sauce <br>
+			<input type="checkbox" name="burgerSauce" value="sauceSteak">Steak sauce <br>
+			<input type="checkbox" name="burgerSauce" value="sauceBBQ">BBQ sauce <br>
+			<input type="checkbox" name="burgerSauce" value="sauceHot">Hot sauce <br>
+			<input type="checkbox" name="burgerSauce" value="sauceHoneyMustard">Honey mustard <br>
+			<input type="checkbox" name="burgerSauce" value="sauceRanch">Ranch <br>
+			<input type="checkbox" name="burgerSauce" value="sauceChipotle">Chipotle sauce <br>
+			<input type="checkbox" name="burgerSauce" value="sauceOlive">Olive sauce <br>
+
+			<h5>Wanna add some fries with that?</h5>
+			<input type="checkbox" name="fries" value="friesPlease">Hell yeah. <br>
+
+			<h5>How many burgers?</h5>
+			<input type="text" name="burgerQuantity"> <br>
+
+			<h5>Looks good!</h5>
+			<input type="submit" name="submit" value="Add to Cart">
+		</form>
+		</div>
+	</body>
+</html>

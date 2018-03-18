@@ -1,0 +1,129 @@
+{
+  "menu": {
+    "burgerType": [
+      {
+        "type": "Hamburger",
+        "value": "HB"
+      },
+      {
+        "type": "Cheese Burger",
+        "value": "CB"
+      },
+      {
+        "type": "Bacon Burger",
+        "value": "BB"
+      },
+      {
+        "type": "Bacon Cheese Burger",
+        "value": "BCB"
+      }
+    ],
+    "breadType": [
+      {
+        "type": "Wholemeal",
+        "value": "HM"
+      },
+      {
+        "type": "White",
+        "value": "WH"
+      },
+      {
+        "type": "Rye",
+        "value": "RY"
+      }
+    ],
+    "burgerSize": {
+      "sizeS": "small",
+      "sizeM": "medium",
+      "sizeL": "large"
+    },
+    "toppings": [
+      {
+        "topping": "Tomato",
+        "value": "TM"
+      },
+      {
+        "topping": "Lettuce",
+        "value": "LT"
+      },
+      {
+        "topping": "Onions",
+        "value": "ON"
+      },
+      {
+        "topping": "Pickles",
+        "value": "PK"
+      },
+      {
+        "topping": "Avocado",
+        "value": "AV"
+      },
+      {
+        "topping": "Relish",
+        "value": "RS"
+      },
+      {
+        "topping": "Peppers",
+        "value": "PP"
+      },
+      {
+        "topping": "Jalape&ntilde;os",
+        "value": "JP"
+      },
+      {
+        "topping": "Mushrooms",
+        "value": "MS"
+      },
+      {
+        "topping": "Extra Cheese",
+        "value": "EC"
+      },
+      {
+        "topping": "Grilled Jalape&ntilde;os",
+        "value": "GJP"
+      },
+      {
+        "topping": "Grilled Onions",
+        "value": "GON"
+      },
+      {
+        "topping": "Grilled Peppers",
+        "value": "GPP"
+      }
+    ],
+    "sauces": [
+      {
+        "sauce": "Mr. Burgers Specialty",
+        "value": "SP"
+      },
+      {
+        "sauce": "Steak Sauce",
+        "value": "SS"
+      },
+      {
+        "sauce": "BBQ Sauce",
+        "value": "BBQ"
+      },
+      {
+        "sauce": "Hot Sauce",
+        "value": "HS"
+      },
+      {
+        "sauce": "Honey Mustard",
+        "value": "HM"
+      },
+      {
+        "sauce": "Ranch",
+        "value": "RC"
+      },
+      {
+        "sauce": "Chipotle",
+        "value": "CH"
+      },
+      {
+        "sauce": "Olive",
+        "value": "OV"
+      }
+    ]
+  }
+}

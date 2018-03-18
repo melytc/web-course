@@ -1,0 +1,132 @@
+<html>
+	<head>
+		<title>Mr. Burger - Your order</title>
+		
+		<meta charset="utf-8">
+		<meta name="keywords" content="burger, food, delicious">
+		<meta name="author" content="Melissa Treviño">
+
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<script type="text/javascript" src="logic/jquery.js"></script>
+		<script type="text/javascript" src="logic/orderForm.js"></script>
+	</head>
+	<body>
+        <header id="header">
+            <img id="logo" src="assets/logoBox.png">
+            <h4 id="slogan">
+            </h4>
+        </header>
+
+        <ul id="homeMenu">
+            <li class="orderNow selected">Order Now</li>
+            <li class="leaveComment">Leave a comment</li>
+        </ul>
+
+		<div id="orderNow" class="elementSelected">
+            <div class="column">
+                <h5>Choose a type of burger:</h5>
+                <!-- Loaded in orderForm.js -->
+                <span id="burgerTypeData"></span>
+                
+                <span id="errorBurgerType" class="errorMessage hiddenMessage">Please choose a burger.</span>
+    
+                <h5>Choose a type of bread:</h5>
+                <!-- Loaded in orderForm.js -->
+                <span id="breadTypeData"></span>
+
+                <span id="errorBreadType" class="errorMessage hiddenMessage">Please choose a bread.</span>
+                
+                <h5>Wanna add...</h5>
+                <input type="checkbox" name="burgerCondiment" value="mayo">Mayo <br>
+                <input type="checkbox" name="burgerCondiment" value="ketchup">Ketchup <br>
+                <input type="checkbox" name="burgerCondiment" value="mustard">Mustard <br>
+    
+                <h5>Sauce?</h5>
+                <!-- Loaded in orderForm.js -->
+                <span id="burgerSauceData"></span>		
+
+                <h5>Toppings?</h5>
+                <!-- Loaded in orderForm.js -->
+                <span id="burgerToppingsData"></span>
+    
+                <h5>Choose the size of your burger:</h5>
+                <!-- Loaded in orderForm.js -->
+                <span id="burgerSizeData"></span>
+                <span id="errorBurgerSize" class="errorMessage hiddenMessage">Please choose a size.</span>
+    
+                <h5>Wanna add some fries with that?</h5>
+                <input type="checkbox" id="addFries">Hell yeah.<br>
+    
+                <h5>How many burgers?</h5>
+                <input type="text" id="burgerQuantity"> <br>
+                <span id="errorBurgerOrders" class="errorMessage hiddenMessage">Please choose a quantity.</span>
+
+                <div id="buttonsDiv">
+                    <h5>Looks good!</h5>
+                    <button id="submitButton">Add to cart</button>
+					<button id="restartButton">Reset order</button>
+                </div>
+            </div>
+
+            <div class="column">
+                <div id="orderSummary">
+                    <blockquote>
+                        <h3>Your order summary:</h3>
+                        <div class="summary" id="burgerSummary"></div>
+                        <div class="summary" id="condimentsSummary"></div>
+                        <div class="summary" id="saucesSummary"></div> <br>		
+                        <h5 id="toppingHeader">Toppings:</h4>
+                        <ul id="toppingsSummary"></ul> <br>
+                        <div class="summary" id="friesSummary"></div> <br>	
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </div>
+
+		<div id="leaveComment" class="hiddenElement">
+            <fieldset>
+                <legend>Leave a comment here:</legend>
+                <div id="name">
+                    <br>
+                    <label><strong>Name</strong></label>
+                    <span id="nameError" class="hiddenMessage errorMessage">Please type your name.</span>
+                    <br>
+                    <input id="nameText" type="text">
+                </div>
+                <div id="email">
+                    <br>
+                    <label><strong>Email</strong></label>
+                    <span id="emailError" class="hiddenMessage errorMessage">Please type your email.</span>
+                    <br>
+                    <input id="emailText" type="text" name="email">
+                </div>
+                <div id="comment">
+                    <br>
+                    <label><strong>Comment</strong></label>
+                    <span id="commentError" class="hiddenMessage errorMessage">Please type your comment.</span>
+                    <br>
+                    ​<textarea id="commentText" rows="15" cols="60"></textarea>
+                </div>
+            </fieldset>
+            <br>
+            <div id="submitComment">Submit</div>
+                <strong>Comment log</strong>
+                <br>
+                <div id="commentLogContainer" class="">
+                    <table id="commentLogTable">
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Comment</th>
+                    </tr>
+                    </table>
+                </div>
+            </div>
+            <br>
+		</div>
+        
+        <footer>
+        </footer>
+	</body>
+</html>
