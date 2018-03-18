@@ -16,7 +16,7 @@ as in the comments section will be added before posting an order to the
 Database. This section will be graded in the next laboratory, but you
 might want to start building it up.
 
-##Extra information to consider:
+## Extra information to consider:
 - You must use the AJAX jQuery techniques that we saw at class as well as
 the PHP Service techniques to call the cookies and sessions.
 - Follow instructions! The same instructions tell you what to be done.
