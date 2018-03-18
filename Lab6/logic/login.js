@@ -35,10 +35,10 @@ $(document).ready(function(){
 				ContentType : "application/json",
 				dataType : "json",
 				success : function(dataReceived){
-					if(dataReceived.success){
+					if(dataReceived.status == 'SUCCESS') {
 						alert("Welcome back " + dataReceived.firstname + " " + dataReceived.lastname);
 						window.location.href = "./home.html";
-					} else{
+					} else {
 						alert('We were not able to log you in. Please try again.');
 					}
 				},

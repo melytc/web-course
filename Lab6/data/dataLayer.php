@@ -37,7 +37,7 @@
             # Retrieve all the results.
             if ($resultDB->num_rows > 0) {
                 while ($row = $resultDB->fetch_assoc()) {
-                    $response = ["firstname"=>$row["fName"], "lastname"=>$row["lName"], "status"=>"SUCCESS"];
+                    $response = ["username"=>$row["username"],"firstname"=>$row["fName"], "lastname"=>$row["lName"], "status"=>"SUCCESS"];
                 }
             # Return response from database as an array.
             return $response;

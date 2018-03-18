@@ -33,11 +33,28 @@
         $result = dbLogin($uName, $uPassword);
 
         if($result["status"] == "SUCCESS"){
+            startSession($result);
             # Everything went okay, send info to the frontend.
             echo json_encode($result);
         } else {
             # For all error handling.
             handleError($result["status"]);
+        }
+    }
+
+    # startSession
+    # Function that will enable saving a session when logged-in.
+    function startSession($result){
+        // Session is started.
+        session_start();
+        if (! isset($_SESSION['uName'])) {
+            $_SESSION['uName'] = $result['username'];
+        }
+        if (! isset($_SESSION['fName'])) {
+            $_SESSION['fName'] = $result['firstname'];
+        }
+        if (! isset($_SESSION['lName'])) {
+            $_SESSION['lName'] = $result['lastname'];
         }
     }
 
