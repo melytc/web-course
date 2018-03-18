@@ -4,7 +4,7 @@ $(document).ready(function(){
 
 function logout(){
 	$.ajax({
-		url : "./data/logoutService.php",
+		url : "./data/applicationLayer.php",
 		type : "POST",
 		dataType : "text",
 		success : function(dataReceived){

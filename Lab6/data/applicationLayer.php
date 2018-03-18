@@ -19,6 +19,9 @@
         case 'LOGIN':
             attemptLogin();
             break;
+        case 'LOGOUT':
+            endSession();
+            break;
     }
 
     # attemptLogin
@@ -56,6 +59,16 @@
         if (! isset($_SESSION['lName'])) {
             $_SESSION['lName'] = $result['lastname'];
         }
+    }
+
+    # endSession
+    # Function that will unset the session variables and destroy the session, intended to be used when a user logs out.
+    function endSession(){
+        session_start();
+        unset($_SESSION["fName"]);
+        unset($_SESSION["lName"]);
+        unset($_SESSION["uName"]);
+        session_destroy();
     }
 
     # handleError
