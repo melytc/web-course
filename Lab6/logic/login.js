@@ -24,11 +24,12 @@ $(document).ready(function(){
 			var jsonToSend = {
 				"uName" : username,
 				"uPassword" : password,
-				"rememberMe" : remember
+				"rememberMe" : remember,
+				"action" : 'LOGIN'
 			};
 							 
 			$.ajax({
-				url : "./data/loginService.php",
+				url : "./data/applicationLayer.php",
 				type : "POST",
 				data : jsonToSend,
 				ContentType : "application/json",
@@ -38,8 +39,7 @@ $(document).ready(function(){
 						alert("Welcome back " + dataReceived.firstname + " " + dataReceived.lastname);
 						window.location.href = "./home.html";
 					} else{
-						alert('Could not log you in. Please try again.');
-
+						alert('We were not able to log you in. Please try again.');
 					}
 				},
 				error : function(errorMessage){
