@@ -1,0 +1,40 @@
+<html>
+	<head>
+		<title>Mr. Burger - Your order</title>
+		
+		<meta charset="utf-8">
+		<meta name="keywords" content="burger, food, delicious">
+		<meta name="author" content="Melissa Treviño">
+
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+	<body>
+		<header id="header">
+			<a href="home.html">
+				<img id="logo" src="assets/logoBox.png">
+			</a>
+			<h4 id="slogan"></h4>
+			<ul id="mainNav">
+			    <li> <a id="login" href="login.html">Login</a> </li>
+			    <li> <a id="register" href="registration.html">Register</a> </li>
+			</ul>
+		</header>
+
+		<div class="container">
+			<h1>Login</h1>
+			<fieldset>
+				<legend>Login with your credentials.</legend>
+				<div id="loginContainer">
+					<label for="username">Username</label>
+					<input id="username" class="formElement" type="text"/>
+					<label for="userPassword">Password</label>
+					<input id="userPassword" class="formElement" type="password"/>
+					<label><input type="checkbox" id="rememberBox" value="Remember Me"/>Remember my username</label>
+					<input type="button" id="loginButton" value="Login"/>
+				</div>
+			</fieldset>
+		</div>
+		<script type="text/javascript" src="logic/jquery.js"></script>
+		<script type="text/javascript" src="logic/login.js"></script>
+	</body>
+</html>
