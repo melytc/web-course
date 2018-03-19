@@ -34,6 +34,9 @@
         case 'LOADCOMMENTS':
             loadComments();
             break;
+        case 'POSTCOMMENT':
+            postComment();
+            break;
     }
 
     # attemptLogin
@@ -155,7 +158,7 @@
 
     # checkCookie
     # Function that checks whether the user wants to remember her username.
-    # If the cookie was already set, return the username
+    # If the cookie was already set, returns the username.
     # Else return a message "no cookie set"
     function checkCookie(){
         if (isset($_COOKIE['cookieUsername'])){
@@ -166,8 +169,25 @@
         }
     }
 
+    # loadComments
+    # Function that will retrieve all comments from the data layer.
     function loadComments(){
         $result = dbLoadComments();
+
+        if($result["status"] == "SUCCESS"){
+            # Everything went okay, send info to the frontend.
+            echo json_encode($result);
+        } else {
+            # For all error handling.
+            handleError($result["status"]);
+        }
+    }
+
+    # postComment
+    # Function that will send to the data layer a commnet to save it.
+    # 
+    function postComment(){
+        $result = dbPostComment();
 
         if($result["status"] == "SUCCESS"){
             # Everything went okay, send info to the frontend.

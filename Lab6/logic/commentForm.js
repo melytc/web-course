@@ -111,11 +111,12 @@ function postComment(username, fromModal){
 	var commentText = $("#commentText").val();
 	var jsonToSend = {
 		"commentText" : commentText,
-		"username" : username
+		"username" : username,
+		"action" : 'POSTCOMMENT'
 	}
 
 	$.ajax({
-		url : "./data/postComment.php",
+		url : "./data/applicationLayer.php",
 		type : "POST",
 		data : jsonToSend,
 		ContentType : "application/json",
@@ -137,9 +138,6 @@ function postComment(username, fromModal){
 }
 
 
-// LOGIN INFO:
-
-
 function sendLoginInfoToServer() {
 	var username = $("#modalUsername").val();
 	var password = $("#modalPassword").val();
@@ -148,11 +146,12 @@ function sendLoginInfoToServer() {
 		var jsonToSend = {
 			"uName" : username,
 			"uPassword" : password,
-			"rememberMe" : false
+			"rememberMe" : false,
+			"action" : 'LOGIN'
 		};
 
 		$.ajax({
-			url : "./data/loginService.php",
+			url : "./data/applicationLayer.php",
 			type : "POST",
 			data : jsonToSend,
 			dataType : "json",

@@ -116,4 +116,27 @@
             return ["status" => "500"];
         }
     }
+
+    # dbPostComment
+    # Function to post a comment into the database.
+    function dbPostComment($uName, $commentText){
+        $connection = connectionDB();
+
+        if($connection != null){
+            # Query to add a comment into the database.
+            $sql = "INSERT INTO Comment(username, commentText)
+            VALUES('$uName', '$commentText')";
+            $result = $conn->query($sql);
+
+            if($result){
+                $response = ["status" => "SUCCESS"];
+                echo json_encode($response);
+            } else {
+                return ["status" => "500"];
+            }
+        } else {
+             # Database connection was unsuccessful.
+             return ["status" => "500"];
+        }
+    }
 ?>
