@@ -80,9 +80,9 @@
                         VALUES ('$uFname', '$uLname', '$uName', '$uPassword', '$uEmail')";
                 $result = $connection->query($sql);
 
-                if($result->num_rows > 0){
+                if($result){
                     # Registration was successful.
-                    $response = ["username"=>$row["username"],"firstname"=>$row["fName"], "lastname"=>$row["lName"], "status" => "SUCCESS"];
+                    $response = ["status" => "SUCCESS"];
                     return $response;
                 } else {
                     # Registration was unsuccessful.

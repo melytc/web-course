@@ -132,11 +132,12 @@
         $uName = $_POST["uUsername"];
         $uPassword = $_POST["uPassword"];
         $uEmail = $_POST["uEmail"];
+        $userInfo = ["username" => $uName,"firstname" => $uFname, "lastname" => $uLname, "status"=>"SUCCESS"];
 
         $result = dbRegister($uFname, $uLname, $uName, $uPassword, $uEmail);
 
         if($result["status"] == "SUCCESS"){
-            startSession($result);
+            startSession($userInfo);
             echo json_encode($result);
         } else {
             # For all error handling.
