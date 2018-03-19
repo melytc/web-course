@@ -8,11 +8,11 @@
     require_once __DIR__ . '/dataLayer.php';
 
     # Instruction for debugging.
-    # ini_set('display_errors', 1);
-    # ini_set('log_errors', 1);
-    # error_reporting(E_ALL);
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
+    ini_set('log_errors', 1);
 
-    # This parameter is sent from frontend in order to know what to do.
+    # All POST calls will enter here.
     $postAction = $_POST["action"];
 
     switch($postAction){
@@ -28,14 +28,9 @@
         case 'POSTCOMMENT':
             postComment();
             break;
-    }
-    
-    $getAction = $_GET["action"];
-    
-    switch($getAction){
         case 'CHECKSESSION':
-        checkSession();
-        break;
+            checkSession();
+            break;
         case 'CHECKCOOKIE':
             checkCookie();
             break;

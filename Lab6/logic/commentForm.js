@@ -38,7 +38,7 @@ function loadComments(){
 	}
 	$.ajax({
 		url: "data/applicationLayer.php",
-		type: "GET",
+		type: "POST",
 		data : jsonToSend,
 		ContentType : "application/json",
 		dataType: "json",

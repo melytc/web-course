@@ -1,4 +1,10 @@
 <?php
+
+    # Instruction for debugging.
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
+    ini_set('log_errors', 1);
+
     # connectionDB
     # Function to connect to the database.
     # Returns the connection object ($conn) if successful, and null if connection was unsuccessful.
@@ -63,7 +69,7 @@
 
             # Validate that the user is not already in use.
             $sql = "SELECT username FROM Users WHERE username = '$uName'";
-            $result = $conn->query($sql);
+            $result = $connection->query($sql);
 
             if ($result->num_rows > 0) {
                 # Username already in use.
@@ -72,7 +78,7 @@
                 # Query to add a new user.
                 $sql = "INSERT INTO Users(fName, lName, username, passwrd, email)
                         VALUES ('$uFname', '$uLname', '$uName', '$uPassword', '$uEmail')";
-                $result = $conn->query($sql);
+                $result = $connection->query($sql);
 
                 if($result->num_rows > 0){
                     # Registration was successful.

@@ -6,7 +6,7 @@ $(document).ready(function(){
 	
 	$.ajax({
 		url : "./data/applicationLayer.php",
-		type : "GET",
+		type : "POST",
 		dataType : "json",
 		data : jsonToSend,
 		success : function(dataReceived){

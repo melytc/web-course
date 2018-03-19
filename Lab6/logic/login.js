@@ -5,7 +5,7 @@ $(document).ready(function(){
     // AJAX call to check if we had to remember a username (the remember cookie is set)
 	$.ajax({
 		url: "./data/applicationLayer.php",
-		type: "GET",
+		type: "POST",
 		data : jsonToSend,
 		dataType: "json",
 		ContentType : "application/json",
