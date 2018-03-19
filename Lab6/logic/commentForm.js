@@ -32,9 +32,15 @@ function showModal(){
 
 // Function to load comment data from xml file.
 function loadComments(){
+
+	var jsonData = {
+		"action" : 'LOADCOMMENTS'
+	}
 	$.ajax({
-		url: "data/comments.php",
-		type: "GET",
+		url: "data/applicationLayer.php",
+		type: "POST",
+		data : jsonData,
+		ContentType : "application/json",
 		dataType: "json",
 		success: function (jsonData) {
 			var tableElements = "";

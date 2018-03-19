@@ -88,4 +88,32 @@
             return ["status" => "500"];
         }
     }
+
+    # dbLoadComment
+    # Function to load all comments from the database.
+    function dbLoadComment(){
+        $connection = connectionDB();
+
+        if($connection != null){
+            # Query to retrieve all comments.
+            $sql = "SELECT c.username as 'username', u.email as 'email', c.commentText as 'commentText'
+			FROM Comment c JOIN Users u
+			ON c.username = u.username
+			ORDER BY c.id ASC";
+            $result = $conn->query($sql);
+            $response = array();
+
+            if ($result) {
+                while ($row = $result->fetch_assoc()){
+                    array_push($response, array("username" => $row["username"], "email" => $row["email"], "comment" => $row["commentText"], "status" => "SUCCESS"));
+                }
+                echo json_encode($response);
+            } else {
+                return ["status" => "500"];
+            }
+        } else {
+            # Database connection was unsuccessful.
+            return ["status" => "500"];
+        }
+    }
 ?>

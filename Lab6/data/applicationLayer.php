@@ -31,6 +31,9 @@
         case 'CHECKCOOKIE':
             checkCookie();
             break;
+        case 'LOADCOMMENTS':
+            loadComments();
+            break;
     }
 
     # attemptLogin
@@ -160,6 +163,18 @@
         } else {
             // header('HTTP/1.1 200 Cookie not set yet.');
             echo json_encode(['message' => 'No cookie set', 'code' => 1337]);
+        }
+    }
+
+    function loadComments(){
+        $result = dbLoadComments();
+
+        if($result["status"] == "SUCCESS"){
+            # Everything went okay, send info to the frontend.
+            echo json_encode($result);
+        } else {
+            # For all error handling.
+            handleError($result["status"]);
         }
     }
 ?>
