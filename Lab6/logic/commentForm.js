@@ -108,6 +108,7 @@ function validateComment(){
 // Function to post a comment into the comment log.
 function postComment(username, fromModal){
 
+	console.log("postComment entered.");
 	var commentText = $("#commentText").val();
 	var jsonToSend = {
 		"commentText" : commentText,
@@ -122,16 +123,17 @@ function postComment(username, fromModal){
 		ContentType : "application/json",
 		dataType : "json",
 		success : function(dataReceived){
-			if(dataReceived.success){
+			if(dataReceived.status == 'SUCCESS'){
+				console.log("postComment success function entered.");
 				alert("Comment posted!");
 				loadComments();    
 			} else {
 				alert("Sorry, error posting comments.");
-				console.error("Error posting comment.");
 			}
 			
 		},
 		error : function(errorMessage){
+			console.log("postComment error function entered.");
 			alert(errorMessage.statusText);
 		}
 	});

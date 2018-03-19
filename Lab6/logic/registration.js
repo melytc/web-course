@@ -10,7 +10,6 @@ $(document).ready(function(){
 			"uEmail" : $("#email").val(),
 			"action" : 'REGISTER'
 		};
-		console.log("Clicked the registration button.");
 
 		$.ajax({
 			url: "./data/applicationLayer.php",
@@ -19,7 +18,6 @@ $(document).ready(function(){
 			ContentType : "application/json",
 			dataType : "json",
 			success : function(dataReceived){
-				console.log("Registration success function.");
 				if(dataReceived.status == "SUCCESS"){
 					alert("You are registered!");
 					window.location.replace("home.html");	
@@ -28,7 +26,6 @@ $(document).ready(function(){
 				}
 			},
 			error : function(errorMsg){
-				console.log("Registration error function.");
 				alert(errorMsg.statusText);
 			}
 		});

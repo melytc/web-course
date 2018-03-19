@@ -132,11 +132,11 @@
             # Query to add a comment into the database.
             $sql = "INSERT INTO Comment(username, commentText)
             VALUES('$uName', '$commentText')";
-            $result = $conn->query($sql);
+            $result = $connection->query($sql);
 
             if($result){
                 $response = ["status" => "SUCCESS"];
-                echo json_encode($response);
+                return $response;
             } else {
                 return ["status" => "500"];
             }

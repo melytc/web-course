@@ -10,17 +10,14 @@ $(document).ready(function(){
 		dataType: "json",
 		ContentType : "application/json",
 		success: function(dataReceived){
-			console.log("Check cookie success function.");
 			$("#username").val(dataReceived.cookieUsername);
 		},
 		error: function(errorMessage){
-			console.log("Check cookie error function." + errorMessage);
         }
     });
         
     $("#loginButton").on("click", function(){
 
-		console.log("Login button clicked.");
 		var username = $("#username").val();
 		var password = $("#userPassword").val();
 		var remember = $("#rememberBox").is(":checked");
@@ -40,7 +37,6 @@ $(document).ready(function(){
 				ContentType : "application/json",
 				dataType : "json",
 				success : function(dataReceived){
-					console.log("Login success funtion.");
 					if(dataReceived.status == 'SUCCESS') {
 						alert("Welcome back " + dataReceived.firstname + " " + dataReceived.lastname);
 						window.location.href = "./home.html";
@@ -49,7 +45,6 @@ $(document).ready(function(){
 					}
 				},
 				error : function(errorMessage){
-					console.log("Login error funtion.");
 					alert(errorMessage.statusText);
 				}
 			});

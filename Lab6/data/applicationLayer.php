@@ -191,7 +191,9 @@
     # Function that will send to the data layer a commnet to save it.
     # 
     function postComment(){
-        $result = dbPostComment();
+        $uName = $_POST["username"];
+        $commentText = $_POST["commentText"];
+        $result = dbPostComment($uName, $commentText);
 
         if($result["status"] == "SUCCESS"){
             # Everything went okay, send info to the frontend.
