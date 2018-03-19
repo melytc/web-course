@@ -2,7 +2,7 @@ $(document).ready(function(){
     var jsonToSend = {
 		"action" : 'CHECKCOOKIE'
 	}
-    // AJAX call to check if we had to remember a username (the remember cookie is set)
+    // AJAX call to check if we had to remember a username (the remember cookie is set).
 	$.ajax({
 		url: "./data/applicationLayer.php",
 		type: "POST",
@@ -10,10 +10,11 @@ $(document).ready(function(){
 		dataType: "json",
 		ContentType : "application/json",
 		success: function(dataReceived){
+			console.log("Check cookie success function.");
 			$("#username").val(dataReceived.cookieUsername);
 		},
 		error: function(errorMessage){
-			// alert("Error on AJAX call for cookies! " + errorMessage.statusText);
+			console.log("Check cookie error function." + errorMessage);
         }
     });
         

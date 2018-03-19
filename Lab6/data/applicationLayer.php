@@ -47,12 +47,16 @@
         # Receive the login and password from frontend.
         $uName = $_POST["uName"];
         $uPassword = $_POST["uPassword"];
+        $rememberMe = $_POST["rememberMe"];
         
         # Call to function dbLogin from dataLayer.
         $result = dbLogin($uName, $uPassword);
 
         if($result["status"] == "SUCCESS"){
             startSession($result);
+            if($rememberMe == "true"){
+                setcookie("cookieUsername", $uName, time() + 3600*24*5, "/", "", 0);
+            }
             # Everything went okay, send info to the frontend.
             echo json_encode($result);
         } else {
@@ -162,10 +166,9 @@
     # If the cookie was already set, returns the username.
     # Else return a message "no cookie set"
     function checkCookie(){
-        if (isset($_COOKIE['cookieUsername'])){
+        if(isset($_COOKIE['cookieUsername'])){
             echo json_encode(['cookieUsername' => $_COOKIE['cookieUsername']]);   	    
         } else {
-            # header('HTTP/1.1 200 Cookie not set yet.');
             echo json_encode(['message' => 'No cookie set', 'code' => 1337]);
         }
     }
