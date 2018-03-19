@@ -1,9 +1,14 @@
 // Check if the user is logged in (hide login button).
 $(document).ready(function(){
+	jsonToSend = {
+		"action" : 'CHECKSESSION'
+	};
+	
 	$.ajax({
-		url : "./data/checkSession.php",
+		url : "./data/applicationLayer.php",
 		type : "GET",
 		dataType : "json",
+		data : jsonToSend,
 		success : function(dataReceived){
 			if(!dataReceived.fName){
 				// User is not logged in.

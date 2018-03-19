@@ -25,6 +25,9 @@
         case 'REGISTER':
             attemptRegister();
             break;
+        case 'CHECKSESSION':
+            checkSession();
+            break;
     }
 
     # attemptLogin
@@ -132,4 +135,15 @@
         }
     }
 
+    # checkSession
+    # Function to validate if there is an active session alive.
+    # Returns user's first name, last name and username if there is an active session, or a false value in first name key if no session was found.
+    function checkSession(){
+        session_start();
+        if(isset($_SESSION["uName"])){
+            echo json_encode(["fName" => $_SESSION["fName"], "lName" => $_SESSION["lName"], "uName" => $_SESSION["uName"]]);
+        } else {
+            echo json_encode(["fName" => false]);
+        }
+    }
 ?>

@@ -168,10 +168,15 @@ function sendLoginInfoToServer() {
 
 // Function to validate that there is a current session.
 function checkSession(){
+	jsonToSend = {
+		"action" : 'CHECKSESSION'
+	};
+	
 	$.ajax({
-		url : "./data/checkSession.php",
+		url : "./data/applicationLayer.php",
 		type : "POST",
 		dataType : "json",
+		data : jsonToSend,
 		success : function(dataReceived){
 			if(dataReceived.fName){
 				postComment(dataReceived.uName, false);
