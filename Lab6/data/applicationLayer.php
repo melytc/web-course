@@ -28,6 +28,9 @@
         case 'CHECKSESSION':
             checkSession();
             break;
+        case 'CHECKCOOKIE':
+            checkCookie();
+            break;
     }
 
     # attemptLogin
@@ -144,6 +147,19 @@
             echo json_encode(["fName" => $_SESSION["fName"], "lName" => $_SESSION["lName"], "uName" => $_SESSION["uName"]]);
         } else {
             echo json_encode(["fName" => false]);
+        }
+    }
+
+    # checkCookie
+    # Function that checks whether the user wants to remember her username.
+    # If the cookie was already set, return the username
+    # Else return a message "no cookie set"
+    function checkCookie(){
+        if (isset($_COOKIE['cookieUsername'])){
+            echo json_encode(['cookieUsername' => $_COOKIE['cookieUsername']]);   	    
+        } else {
+            // header('HTTP/1.1 200 Cookie not set yet.');
+            echo json_encode(['message' => 'No cookie set', 'code' => 1337]);
         }
     }
 ?>
