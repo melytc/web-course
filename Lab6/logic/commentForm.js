@@ -108,7 +108,6 @@ function validateComment(){
 // Function to post a comment into the comment log.
 function postComment(username, fromModal){
 
-	console.log("postComment entered.");
 	var commentText = $("#commentText").val();
 	var jsonToSend = {
 		"commentText" : commentText,
@@ -124,7 +123,6 @@ function postComment(username, fromModal){
 		dataType : "json",
 		success : function(dataReceived){
 			if(dataReceived.status == 'SUCCESS'){
-				console.log("postComment success function entered.");
 				alert("Comment posted!");
 				loadComments();    
 			} else {
@@ -133,7 +131,6 @@ function postComment(username, fromModal){
 			
 		},
 		error : function(errorMessage){
-			console.log("postComment error function entered.");
 			alert(errorMessage.statusText);
 		}
 	});
@@ -158,7 +155,7 @@ function sendLoginInfoToServer() {
 			data : jsonToSend,
 			dataType : "json",
 			success : function(dataReceived){
-				if(dataReceived.success){
+				if(dataReceived.status == 'SUCCESS'){
 					$("#loginModal").dialog("close");
 					postComment(username, true);	
 				} else {
