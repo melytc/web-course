@@ -35,46 +35,46 @@ function loadMenu(){
        url: "data/menu.json",
        type: "GET",
        dataType: "json",
-       success: function(jsonData){
+       success: function(dataReceived){
 
             // Load burger type data.
             var burgerTypeHTML = "";
-            for(var i = 0; i < jsonData.menu.burgerType.length; i++){
-                burgerTypeHTML += '<input type="radio" name="burgerType" value="' + jsonData.menu.burgerType[i].value + '">' + jsonData.menu.burgerType[i].type + '</input> <br>';
+            for(var i = 0; i < dataReceived.menu.burgerType.length; i++){
+                burgerTypeHTML += '<input type="radio" name="burgerType" value="' + dataReceived.menu.burgerType[i].value + '">' + dataReceived.menu.burgerType[i].type + '</input> <br>';
             }
             $("#burgerTypeData").append(burgerTypeHTML);
 
             // Load bread type data.
             var breadTypeHTML = "";
-            for(var i = 0; i < jsonData.menu.breadType.length; i++){
-                breadTypeHTML += '<input type="radio" name="breadType" value="' + jsonData.menu.breadType[i].value + '">' + jsonData.menu.breadType[i].type + '</input> <br>';
+            for(var i = 0; i < dataReceived.menu.breadType.length; i++){
+                breadTypeHTML += '<input type="radio" name="breadType" value="' + dataReceived.menu.breadType[i].value + '">' + dataReceived.menu.breadType[i].type + '</input> <br>';
             }
             $("#breadTypeData").append(breadTypeHTML);
 
             // Load burger size data.
             var sizeTypeHTML = "";
-            var size = jsonData.menu.burgerSize.sizeS;
+            var size = dataReceived.menu.burgerSize.sizeS;
             sizeTypeHTML += '<input type="radio" name="burgerSize" value="' + size + '"/>' + size + '<br>';
             
-            size = jsonData.menu.burgerSize.sizeM;
+            size = dataReceived.menu.burgerSize.sizeM;
             sizeTypeHTML += '<input type="radio" name="burgerSize" value="' + size + '"/>' + size + '<br>';
 
-            size = jsonData.menu.burgerSize.sizeL;
+            size = dataReceived.menu.burgerSize.sizeL;
             sizeTypeHTML += '<input type="radio" name="burgerSize" value="' + size + '"/>' + size + '<br>';
 
             $("#burgerSizeData").append(sizeTypeHTML);
 
             // Load toppings data.
             var toppingsHTML = "";
-            for(var i = 0; i < jsonData.menu.toppings.length; i++){
-                toppingsHTML += '<input type="checkbox" name="burgerToppings" value="' + jsonData.menu.toppings[i].value + '">' + jsonData.menu.toppings[i].topping + '</input> <br>';
+            for(var i = 0; i < dataReceived.menu.toppings.length; i++){
+                toppingsHTML += '<input type="checkbox" name="burgerToppings" value="' + dataReceived.menu.toppings[i].value + '">' + dataReceived.menu.toppings[i].topping + '</input> <br>';
             }
             $("#burgerToppingsData").append(toppingsHTML);
 
             // Load sauces data.
             var saucesHTML = "";
-            for(var i = 0; i < jsonData.menu.sauces.length; i++){
-                saucesHTML += '<input type="checkbox" name="burgerSauce" value="' + jsonData.menu.sauces[i].value + '">' + jsonData.menu.sauces[i].sauce + '</input> <br>';
+            for(var i = 0; i < dataReceived.menu.sauces.length; i++){
+                saucesHTML += '<input type="checkbox" name="burgerSauce" value="' + dataReceived.menu.sauces[i].value + '">' + dataReceived.menu.sauces[i].sauce + '</input> <br>';
             }
             $("#burgerSauceData").append(saucesHTML);
 

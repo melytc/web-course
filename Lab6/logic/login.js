@@ -5,7 +5,7 @@ $(document).ready(function(){
     // AJAX call to check if we had to remember a username (the remember cookie is set)
 	$.ajax({
 		url: "./data/applicationLayer.php",
-		type: "POST",
+		type: "GET",
 		data : jsonToSend,
 		dataType: "json",
 		ContentType : "application/json",
@@ -19,6 +19,7 @@ $(document).ready(function(){
         
     $("#loginButton").on("click", function(){
 
+		console.log("Login button clicked.");
 		var username = $("#username").val();
 		var password = $("#userPassword").val();
 		var remember = $("#rememberBox").is(":checked");
@@ -35,9 +36,10 @@ $(document).ready(function(){
 				url : "./data/applicationLayer.php",
 				type : "POST",
 				data : jsonToSend,
-				dataType : "json",
 				ContentType : "application/json",
+				dataType : "json",
 				success : function(dataReceived){
+					console.log("Login success funtion.");
 					if(dataReceived.status == 'SUCCESS') {
 						alert("Welcome back " + dataReceived.firstname + " " + dataReceived.lastname);
 						window.location.href = "./home.html";
@@ -46,6 +48,7 @@ $(document).ready(function(){
 					}
 				},
 				error : function(errorMessage){
+					console.log("Login error funtion.");
 					alert(errorMessage.statusText);
 				}
 			});

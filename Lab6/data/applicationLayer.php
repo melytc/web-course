@@ -8,14 +8,14 @@
     require_once __DIR__ . '/dataLayer.php';
 
     # Instruction for debugging.
-    #ini_set('display_errors', 1);
-    #ini_set('log_errors', 1);
-    #error_reporting(E_ALL);
+    # ini_set('display_errors', 1);
+    # ini_set('log_errors', 1);
+    # error_reporting(E_ALL);
 
     # This parameter is sent from frontend in order to know what to do.
-    $action = $_POST["action"];
+    $postAction = $_POST["action"];
 
-    switch($action){
+    switch($postAction){
         case 'LOGIN':
             attemptLogin();
             break;
@@ -25,17 +25,22 @@
         case 'REGISTER':
             attemptRegister();
             break;
-        case 'CHECKSESSION':
-            checkSession();
+        case 'POSTCOMMENT':
+            postComment();
             break;
+    }
+    
+    $getAction = $_GET["action"];
+    
+    switch($getAction){
+        case 'CHECKSESSION':
+        checkSession();
+        break;
         case 'CHECKCOOKIE':
             checkCookie();
             break;
         case 'LOADCOMMENTS':
             loadComments();
-            break;
-        case 'POSTCOMMENT':
-            postComment();
             break;
     }
 
@@ -43,6 +48,7 @@
     # Function that will attempt performing a login with the uName and uPassword.
     # Returns the result as a json_encode, or calls the function handleError when an error occurs.
     function attemptLogin(){
+
         # Receive the login and password from frontend.
         $uName = $_POST["uName"];
         $uPassword = $_POST["uPassword"];
@@ -63,7 +69,7 @@
     # startSession
     # Function that will enable saving a session when logged-in or when registered.
     function startSession($result){
-        // Session is started.
+        # Session is started.
         session_start();
         if (! isset($_SESSION['uName'])) {
             $_SESSION['uName'] = $result['username'];
@@ -90,7 +96,6 @@
     # Function that given an error code, returns the appropriate description on header.
     function handleError($errorCode){
         switch($errorCode){
-            
             case '404':
                 # User was not found.
                 header("HTTP/1.1 404 Not found: User not found.");
@@ -164,7 +169,7 @@
         if (isset($_COOKIE['cookieUsername'])){
             echo json_encode(['cookieUsername' => $_COOKIE['cookieUsername']]);   	    
         } else {
-            // header('HTTP/1.1 200 Cookie not set yet.');
+            # header('HTTP/1.1 200 Cookie not set yet.');
             echo json_encode(['message' => 'No cookie set', 'code' => 1337]);
         }
     }

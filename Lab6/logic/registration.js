@@ -2,7 +2,7 @@ $(document).ready(function(){
 	
 	// User is automatically logged in upon registration (process is done on the server)			
 	$("#registerButton").on("click", function(){
-		var jsonObject = {
+		var jsonToSend = {
 			"uFirstName" : $("#firstName").val(),
 			"uLastName" : $("#lastName").val(),
 			"uUsername" : $("#username").val(),
@@ -15,12 +15,12 @@ $(document).ready(function(){
 		$.ajax({
 			url: "./data/applicationLayer.php",
 			type: "POST",
-			data : jsonObject,
-			dataType : "json",
+			data : jsonToSend,
 			ContentType : "application/json",
-			success : function(jsonData){
-				console.log("success function");
-				if(jsonData.status == "SUCCESS"){
+			dataType : "json",
+			success : function(dataReceived){
+				console.log("Registration success function.");
+				if(dataReceived.status == "SUCCESS"){
 					alert("You are registered!");
 					window.location.replace("home.html");	
 				} else {
@@ -28,7 +28,7 @@ $(document).ready(function(){
 				}
 			},
 			error : function(errorMsg){
-				console.log("error function");
+				console.log("Registration error function.");
 				alert(errorMsg.statusText);
 			}
 		});

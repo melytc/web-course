@@ -33,23 +33,23 @@ function showModal(){
 // Function to load comment data from xml file.
 function loadComments(){
 
-	var jsonData = {
+	var jsonToSend = {
 		"action" : 'LOADCOMMENTS'
 	}
 	$.ajax({
 		url: "data/applicationLayer.php",
-		type: "POST",
-		data : jsonData,
+		type: "GET",
+		data : jsonToSend,
 		ContentType : "application/json",
 		dataType: "json",
-		success: function (jsonData) {
+		success: function (dataReceived) {
 			var tableElements = "";
 	
-			for(var i = 0; i < jsonData.length; i++){
+			for(var i = 0; i < dataReceived.length; i++){
 				tableElements += "<tr>"
-				var name = jsonData[i].username;
-				var email = jsonData[i].email;
-				var text = jsonData[i].comment;
+				var name = dataReceived[i].username;
+				var email = dataReceived[i].email;
+				var text = dataReceived[i].comment;
 	
 				tableElements += "<td>" + name + "</td>";
 				tableElements += "<td>" + email + "</td>";
