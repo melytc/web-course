@@ -46,6 +46,7 @@ function loadComments(){
 		success: function (dataReceived) {
 			if(dataReceived.status == 'SUCCESS'){
 				var tableElements = "";
+				$("#commentLogTable tbody tr").remove();
 		
 				for(var i = 0; i < dataReceived.comments.length; i++){
 					tableElements += "<tr>"
@@ -59,14 +60,13 @@ function loadComments(){
 		
 					tableElements += "</tr>";
 				}
-		
+
 				$("#commentLogTable tbody").append(tableElements);
 			} else {
 				console.log("loadComments else statement in success function.");
 			}
 		}, 
 		error: function (error) {
-			console.log("loadComments error function." + error);
 		}
 	});
 }
@@ -130,7 +130,7 @@ function postComment(username, fromModal){
 		success : function(dataReceived){
 			if(dataReceived.status == 'SUCCESS'){
 				alert("Comment posted!");
-				loadComments();    
+				loadComments();  
 			} else {
 				alert("Sorry, error posting comments.");
 			}
@@ -171,7 +171,6 @@ function sendLoginInfoToServer() {
 			error : function(errorMessage){
 				alert("Could not post message.");
 			}
-
 		});
 	}
 }
