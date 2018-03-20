@@ -1,36 +1,37 @@
-# Final project specifications
+# Final project specifications
 
-I. Project description
-a. Decide why you need a web application.
-b. Scope
-c. Vision
-d. Objective 
-e. Define the primary content of your web application
-i. Ajax, services, html, css, session, login, etc.
-ii. Database, programming languages involved
-f. Define your secondary content of your web application
-i. Plugins
-ii. Open source styles
+## Project description
 
-II. Requirements
-a. Functionality and usability
-b. Style and layout
-c. Functional requirements
-i. User Requirements
-ii. System Requirements
-d. Non-functional requirements
-i. User Requirements
-ii. System Requirements
+1. Decide why you need a web application.
+2. Scope
+3. Vision
+4. Objective 
+5. Define the primary content of your web application
+  > * Ajax, services, html, css, session, login, etc.
+  > * Database, programming languages involved
+6. Define your secondary content of your web application
+  > * Plugins
+  > * Open source styles
 
-III. Specifications
-a. Functional Specifications
-b. Design Specifications
-c. Technical Specifications
+## Requirements
+1. Functionality and usability
+2. Style and layout
+3. Functional requirements
+  > * User Requirements
+  > * System Requirements
+4. Non-functional requirements
+  > * User Requirements
+  > * System Requirements
 
-IV. System Architecture
-a. Software architectural pattern
-b. Development platform
-c. Components
-i. Front-end
-ii. Back-end
+## Specifications
+1. Functional Specifications
+2. Design Specifications
+3. Technical Specifications
+
+## System Architecture
+1. Software architectural pattern
+2. Development platform
+3. Components
+  > * Front-end
+  > * Back-end
 
