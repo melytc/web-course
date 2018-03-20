@@ -97,7 +97,7 @@
 
     # dbLoadComment
     # Function to load all comments from the database.
-    function dbLoadComment(){
+    function dbLoadComments(){
         $connection = connectionDB();
 
         if($connection != null){
@@ -106,14 +106,16 @@
 			FROM Comment c JOIN Users u
 			ON c.username = u.username
 			ORDER BY c.id ASC";
-            $result = $conn->query($sql);
-            $response = array();
+            $result = $connection->query($sql);
 
-            if ($result) {
+            if($result){
+                $response["status"] = "SUCCESS";
+                $response_comments = array();
                 while ($row = $result->fetch_assoc()){
-                    array_push($response, array("username" => $row["username"], "email" => $row["email"], "comment" => $row["commentText"], "status" => "SUCCESS"));
+                    array_push($response_comments, ["username" => $row["username"], "email" => $row["email"], "comment" => $row["commentText"]]);
                 }
-                echo json_encode($response);
+                $response["comments"] = $response_comments;
+                return $response;
             } else {
                 return ["status" => "500"];
             }

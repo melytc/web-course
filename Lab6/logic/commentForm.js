@@ -35,7 +35,8 @@ function loadComments(){
 
 	var jsonToSend = {
 		"action" : 'LOADCOMMENTS'
-	}
+	};
+
 	$.ajax({
 		url: "data/applicationLayer.php",
 		type: "POST",
@@ -43,24 +44,29 @@ function loadComments(){
 		ContentType : "application/json",
 		dataType: "json",
 		success: function (dataReceived) {
-			var tableElements = "";
-	
-			for(var i = 0; i < dataReceived.length; i++){
-				tableElements += "<tr>"
-				var name = dataReceived[i].username;
-				var email = dataReceived[i].email;
-				var text = dataReceived[i].comment;
-	
-				tableElements += "<td>" + name + "</td>";
-				tableElements += "<td>" + email + "</td>";
-				tableElements += "<td>" + text + "</td>";
-	
-				tableElements += "</tr>";
+			if(dataReceived.status == 'SUCCESS'){
+				var tableElements = "";
+		
+				for(var i = 0; i < dataReceived.comments.length; i++){
+					tableElements += "<tr>"
+					var name = dataReceived.comments[i].username;
+					var email = dataReceived.comments[i].email;
+					var text = dataReceived.comments[i].comment;
+		
+					tableElements += "<td>" + name + "</td>";
+					tableElements += "<td>" + email + "</td>";
+					tableElements += "<td>" + text + "</td>";
+		
+					tableElements += "</tr>";
+				}
+		
+				$("#commentLogTable tbody").append(tableElements);
+			} else {
+				console.log("loadComments else statement in success function.");
 			}
-	
-			$("#commentLogTable tbody").append(tableElements);
-	
-		}, error: function (error) {
+		}, 
+		error: function (error) {
+			console.log("loadComments error function." + error);
 		}
 	});
 }

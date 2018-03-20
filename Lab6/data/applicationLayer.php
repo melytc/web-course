@@ -54,6 +54,7 @@
 
         if($result["status"] == "SUCCESS"){
             startSession($result);
+            # Setting cookie for 5 days.
             if($rememberMe == "true"){
                 setcookie("cookieUsername", $uName, time() + 3600*24*5, "/", "", 0);
             }
@@ -115,13 +116,13 @@
             
             case '500':
                 header("HTTP/1.1 500 Internal Server Error: Bad connection, portal down");
-                die("The server is down, we couldn't establish the data base connection.");
+                die("The server is down, we couldn't establish the database connection.");
                 break;
             
             default:
                 # Most common message to send when encountered an error.
                 header("HTTP/1.1 500 Internal Server Error: Bad connection, portal down");
-                die("The server is down, we couldn't stablish the data base connection.");
+                die("Default: The server is down, we couldn't establish the database connection.");
                 break;
         }
     }
@@ -189,7 +190,6 @@
 
     # postComment
     # Function that will send to the data layer a commnet to save it.
-    # 
     function postComment(){
         $uName = $_POST["username"];
         $commentText = $_POST["commentText"];
