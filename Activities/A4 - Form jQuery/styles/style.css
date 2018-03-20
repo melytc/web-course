@@ -1,0 +1,92 @@
+h1 {
+	background-color: #55B3C5;
+	margin: 0;
+	padding: 20px;
+	color: white;
+}
+
+body {
+	font-family: Verdana, sans-serif;
+	font-size: 13px;
+	color: #4F545F;
+	margin: 0;
+	padding: 0;
+}
+
+fieldset {
+	margin: 20px;
+	padding: 20px;
+	border: 2px dashed #DDDDDD;
+}
+
+legend {
+	font-size: 1.3em;
+	font-weight: 900;
+}
+
+fieldset > span#informationSpan {
+	border: 1px solid #6278B0;
+	color: #42579C;
+	padding: 20px 40px;
+	display: block;
+	background: url('../images/infologo.png') no-repeat center left #CCE9F8;
+	background-size: 40px 40px;
+}
+
+.formElement {
+	font-size: 1em;
+	padding: 5px 10px;
+	width: 300px;
+}
+
+select {
+	width: 250px;
+}
+
+#submitForm {
+	background-color: #56C56F;
+}
+
+#cancelForm {
+	background-color: #D9534F;
+}
+
+input[type=submit] {
+	text-align: center;
+	padding: 5px 10px;
+	font-size: 15px;
+	color: white;
+	margin: 0 0 0 20px;
+	border: 0;
+}
+
+input[type=submit]:hover {
+	cursor: pointer;
+}
+
+ul#menu{
+	list-style: none;
+	background-color: #CCCCCC;
+	padding: 0;
+	margin: 0;
+	overflow: hidden;
+}
+
+ul#menu li{
+	padding: 20px;
+	float: left;
+}
+
+#menu li:hover, #menu li.selected {
+	background-color: #999999;
+	color: white;
+	cursor: pointer;
+}
+
+.errorMessage{
+	color: red;
+}
+
+.hiddenMessage{
+	display: none;
+}

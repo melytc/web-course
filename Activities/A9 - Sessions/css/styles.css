@@ -1,0 +1,86 @@
+body{
+    font-family: Verdana, sans-serif;
+    font-size: 13px;
+    color: #4F545F;
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    background-color: #00cccc;
+    margin: 0;
+    padding: 20px;
+    color: white;
+}
+
+fieldset{
+    border: 2px dashed #dddddd;
+    margin: 20px;
+    padding: 20px;
+}
+
+legend{
+    font-size: 1.3em;
+    font-weight: 900;
+}
+
+table {
+    font-family: 'Arial';
+    margin: 25px auto;
+    border-collapse: collapse;
+    border: 1px solid #eee;
+    border-bottom: 2px solid #00cccc;
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.10),
+     0px 10px 20px rgba(0,0,0,0.05),
+     0px 20px 20px rgba(0,0,0,0.05),
+     0px 30px 20px rgba(0,0,0,0.05);
+ }
+
+th, td {
+    color: #999;
+    border: 1px solid #eee;
+    padding: 12px 35px;
+    border-collapse: collapse;
+}
+th {
+    background: #00cccc;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+tr:hover {
+    background: #f4f4f4;
+}
+
+td:hover {
+    color: #555;
+}
+
+ul{
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+    list-style-type: none;
+}
+
+ol, li{
+    list-style-type: none;
+}
+
+select{
+    font-size: 2em;
+}
+
+#listContainer{
+    border: 1px solid #00cccc;
+    width: 40%;
+    margin: auto;
+}
+
+#dropdownMenuContainer{
+    width: 35%;
+    margin: auto;
+}
+
+

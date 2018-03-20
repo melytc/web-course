@@ -1,0 +1,130 @@
+[
+	{
+		"identifier" : "DIF",
+		"state" : "Distrito Federal"
+	},
+	{
+		"identifier" : "AGS",
+		"state" : "Aguascalientes"
+	},
+	{
+		"identifier" : "BCN",
+		"state" : "Baja California"
+	},
+	{
+		"identifier" : "BCS",
+		"state" : "Baja Califoria Sur"
+	},
+	{
+		"identifier" : "CAM",
+		"state" : "Campeche"
+	},
+	{
+		"identifier" : "CHP",
+		"state" : "Chiapas"
+	},
+	{
+		"identifier" : "CHI",
+		"state" : "Chihuahua"
+	},
+	{
+		"identifier" : "COA",
+		"state" : "Coahuila"
+	},
+	{
+		"identifier" : "COL",
+		"state" : "Colima"
+	},
+	{
+		"identifier" : "DUR",
+		"state" : "Durango"
+	},
+	{
+		"identifier" : "GTO",
+		"state" : "Guanajuato"
+	},
+	{
+		"identifier" : "GRO",
+		"state" : "Guerrero"
+	},
+	{
+		"identifier" : "HGO",
+		"state" : "Hidalgo"
+	},
+	{
+		"identifier" : "JAL",
+		"state" : "Jalisco"
+	},
+	{
+		"identifier" : "MEX",
+		"state" : "Mexico"
+	},
+	{
+		"identifier" : "MIC",
+		"state" : "Michoacan"
+	},
+	{
+		"identifier" : "MOR",
+		"state" : "Morelos"
+	},
+	{
+		"identifier" : "NAY",
+		"state" : "Nayarit"
+	},
+	{
+		"identifier" : "NLE",
+		"state" : "Nuevo Leon"
+	},
+	{
+		"identifier" : "OAX",
+		"state" : "Oaxaca"
+	},
+	{
+		"identifier" : "PUE",
+		"state" : "Puebla"
+	},
+	{
+		"identifier" : "QRO",
+		"state" : "Queretaro"
+	},
+	{
+		"identifier" : "ROO",
+		"state" : "Quintana Roo"
+	},
+	{
+		"identifier" : "SLP",
+		"state" : "San Luis Potosi"
+	},
+	{
+		"identifier" : "SIN",
+		"state" : "Sinaloa"
+	},
+	{
+		"identifier" : "SON",
+		"state" : "Sonora"
+	},
+	{
+		"identifier" : "TAB",
+		"state" : "Tabasco"
+	},
+	{
+		"identifier" : "TAM",
+		"state" : "Tamaulipas"
+	},
+	{
+		"identifier" : "TLX",
+		"state" : "Tlaxcala"
+	},
+	{
+		"identifier" : "VER",
+		"state" : "Veracruz"
+	},
+	{
+		"identifier" : "YUC",
+		"state" : "Yucatan"
+	},
+	{
+		"identifier" : "ZAC",
+		"state" : "Zacatecas"
+	}
+]

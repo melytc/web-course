@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Documento HTML</title>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    </head>
+    <body>
+        <h1> AJAX Examples</h1>
+        <fieldset>
+            <legend>Reading an XML and loading it into an un-ordered list</legend>
+            <div id="listContainer">
+                <ul id="restaurantCatalog">
+                </ul>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Reading an XML and loading it into a table</legend>
+            <div id="tableContainer">
+                <table id="foodTable">
+                    <tr>
+                        <th>Name</th>
+                        <th>Serving</th>
+                        <th>Calories</th>
+                        <th>Cholesterol</th>
+                        <th>Sodium</th>
+                        <th>Carbohydrates</th>
+                        <th>Fiber</th>
+                        <th>Protein</th>
+                    </tr>
+                </table>
+            </div>
+        </fieldset>
+        <fieldset>
+            <legend>Reading a JSON file and loading it into a dropdown menu</legend>
+            <div id="dropdownMenuContainer">
+                <label> State: </label>
+                <select id="mexicanStates">
+                    <option value="0">Select a state...</option>
+                </select>
+                <label> Capital: </label>
+                <input id="stateCapital" type="text" value="">
+            </div>
+        </fieldset>
+
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/indexAjax.js"></script>
+
+    </body>
+</html>
+

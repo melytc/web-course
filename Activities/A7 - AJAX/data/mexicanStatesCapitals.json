@@ -1,0 +1,130 @@
+[
+	{
+		"id" : "DIF",
+		"capital" : "Ciudad de Mexico"
+	},
+	{
+		"id" : "AGS",
+		"capital" : "Aguascalientes"
+	},
+	{
+		"id" : "BCN",
+		"capital" : "Mexicali"
+	},
+	{
+		"id" : "BCS",
+		"capital" : "La Paz"
+	},
+	{
+		"id" : "CAM",
+		"capital" : "Campeche"
+	},
+	{
+		"id" : "CHP",
+		"capital" : "Tuxtla Gutierrez"
+	},
+	{
+		"id" : "CHI",
+		"capital" : "Chihuahua"
+	},
+	{
+		"id" : "COA",
+		"capital" : "Saltillo"
+	},
+	{
+		"id" : "COL",
+		"capital" : "Colima"
+	},
+	{
+		"id" : "DUR",
+		"capital" : "Durango"
+	},
+	{
+		"id" : "GTO",
+		"capital" : "Guanajuato"
+	},
+	{
+		"id" : "GRO",
+		"capital" : "Chilpancingo"
+	},
+	{
+		"id" : "HGO",
+		"capital" : "Pachuca"
+	},
+	{
+		"id" : "JAL",
+		"capital" : "Guadalajara"
+	},
+	{
+		"id" : "MEX",
+		"capital" : "Toluca"
+	},
+	{
+		"id" : "MIC",
+		"capital" : "Morelia"
+	},
+	{
+		"id" : "MOR",
+		"capital" : "Cuernavaca"
+	},
+	{
+		"id" : "NAY",
+		"capital" : "Tepic"
+	},
+	{
+		"id" : "NLE",
+		"capital" : "Monterrey"
+	},
+	{
+		"id" : "OAX",
+		"capital" : "Oaxaca"
+	},
+	{
+		"id" : "PUE",
+		"capital" : "Puebla"
+	},
+	{
+		"id" : "QRO",
+		"capital" : "Queretaro"
+	},
+	{
+		"id" : "ROO",
+		"capital" : "Chetumal"
+	},
+	{
+		"id" : "SLP",
+		"capital" : "San Luis Potosi"
+	},
+	{
+		"id" : "SIN",
+		"capital" : "Culiacan"
+	},
+	{
+		"id" : "SON",
+		"capital" : "Sonora"
+	},
+	{
+		"id" : "TAB",
+		"capital" : "Villahermosa"
+	},
+	{
+		"id" : "TAM",
+		"capital" : "Ciudad Victoria"
+	},
+	{
+		"id" : "TLX",
+		"capital" : "Tlaxcala"
+	},
+	{
+		"id" : "VER",
+		"capital" : "Xalapa"
+	},
+	{
+		"id" : "YUC",
+		"capital" : "Merida"
+	},
+	{
+		"id" : "ZAC",
+		"capital" : "Zacatecas"
+	}
+]

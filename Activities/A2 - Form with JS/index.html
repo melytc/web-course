@@ -1,0 +1,50 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="styles/style.css">
+	</head>
+	<body>
+		<h1>Registry Form</h1>
+		<ul id="menu">
+			<li>Home</li>
+			<li>About the site</li>
+			<li>Registry</li>
+			<li>Contact</li>
+			<li>Copyright</li>
+		</ul>
+		<fieldset>
+			<legend> New account registry</legend>
+			<span id="informationSpan">Your information is safe with us.</span>
+			
+			<p>Complete Name</p>
+			<input id="name" type="text" name="name">
+
+			<span class="hideElement" id="errorMessageUserName"> Please provide your name</span>
+
+			<p>Email</p>
+			<input id="email" type="email" name="email">
+
+			<p>Password</p>
+			<input id="password" type="password" name="password">
+
+			<p>Password confirmation</p>
+			<input id="passwordConfirmation" type="password" name="passwordConfirmation">
+			
+			<p>Country</p>
+			<select>
+				<option value="" disabled selected>Select your country</option>
+				<option id="countryM" name="countryM">Mexico</option>
+				<option id="countryU" name="countryU">US</option>
+				<option id="countryC" name="countryC">Canada</option>
+			</select>
+
+			<p>Gender</p>
+			<input id="genderM" type="radio" name="genderM">Masculine</input> <br>
+			<input id="genderF" type="radio" name="genderF">Feminine</input> <br>
+
+			<input type="submit" id="cancelForm" value="Cancel" name="cancel">
+			<input type="submit" id="submitForm" value="Submit" name="submit">
+		</fieldset>
+
+		<script type="text/javascript" src="logic/index.js"></script>
+	</body>
+</html>

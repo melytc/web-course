@@ -1,0 +1,56 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="styles/style.css">
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<h1>Registry Form</h1>
+		<ul id="menu">
+			<li>Home</li>
+			<li>About the site</li>
+			<li>Registry</li>
+			<li>Contact</li>
+			<li>Copyright</li>
+		</ul>
+		<fieldset>
+			<legend> New account registry</legend>
+			<span id="informationSpan">Your information is safe with us.</span>
+			
+			<p>Complete Name</p>
+			<input id="name" type="text" name="name">
+			<span class="errorMessage hiddenMessage" id="errorName">Please provide your full name.</span>
+
+			<p>Email</p>
+			<input id="email" type="email" name="email">
+			<span class="errorMessage hiddenMessage" id="errorEmail">Please provide your email.</span>
+
+			<p>Password</p>
+			<input id="password" type="password" name="password">
+
+			<p>Password confirmation</p>
+			<input id="passwordConfirmation" type="password" name="passwordConfirmation">
+			<span class="errorMessage hiddenMessage" id="errorPassword">Please check your password.</span>
+			
+			<p>Country</p>
+			<select id="country">
+				<option value="0">Select your country</option>
+				<option value="1">Mexico</option>
+				<option value="2">US</option>
+				<option value="3">Canada</option>
+			</select>
+			<span class="errorMessage hiddenMessage" id="errorCountry">Please select a country.</span>
+
+			<p>Gender</p>
+			<input id="genderM" type="radio" name="gender">Masculine</input> <br>
+			<input id="genderF" type="radio" name="gender">Feminine</input> <br>
+			<span class="errorMessage hiddenMessage" id="errorGender">Please select a gender.</span>
+
+			<input type="submit" id="cancelForm" value="Cancel" name="cancel">
+			<input type="submit" id="submitForm" value="Submit" name="submit">
+		</fieldset>
+
+		<script type="text/javascript" src="logic/jquery.js"></script>
+		<script type="text/javascript" src="logic/indexjQuery.js"></script>
+		<!-- <script type="text/javascript" src="logic/index.js"></script> -->
+	</body>
+</html>
