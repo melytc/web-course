@@ -23,5 +23,5 @@ VALUES  ('Alfredo', 'Salazar', 'alfredo08', 'alfred90', 'alfredo@salazar.com'),
 
 INSERT INTO Comment(username, commentText)
 VALUES  ('melytc', "The most delicious burger I have ever tasted. Great service!"),
-        ('axel.srz', "It has quality, a good price, a great taste, and it's served as you decide. What else you want?"),
-        ('alfredo08', "Came all the way from Notradame to taste these delicious hamburgers. (I'm now planning to live over here :) )");
+        ('axel.srz', "It has quality, a good price, a great taste, and its served as you decide. What else you want?"),
+        ('alfredo08', "Came all the way from Notradame to taste these delicious hamburgers. (Im now planning to live over here :) )");
