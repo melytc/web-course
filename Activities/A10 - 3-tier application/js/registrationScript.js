@@ -1,23 +1,6 @@
  $(document).ready(function() {
           
   $("#registerButton").on("click", function() {
-    
-    /*
-    $.ajax({
-        type: "POST",
-        url: "/A9 - PHP Service/data/registrationService.php",
-        data : jsonObject,
-        dataType : "json",
-        ContentType : "application/json",
-        success: function(jsonData) {
-            alert(jsonData);
-            window.location.replace("home.html");   
-        },
-        error: function(errorMsg) {
-            alert(errorMsg.statusText);
-        }
-    });
-    */
 
     var uFirstName = $("#firstName").val();
     var uLastName = $("#lastName").val();
@@ -30,7 +13,8 @@
                 "uUsername" : uUsername,
                 "uPassword" : uPassword,
                 "uFirstName" : uFirstName,
-                "uLastName" : uLastName
+                "uLastName" : uLastName,
+                "action" : 'REGISTER'
             };
 
         $.ajax({
@@ -44,6 +28,7 @@
                 window.location.replace("./home.html");
             },
             error : function(errorMessage){
+                console.log("Registration error function.");
                 alert(errorMessage.statusText);
             }
         });

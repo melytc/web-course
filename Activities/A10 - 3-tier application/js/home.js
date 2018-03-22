@@ -1,11 +1,20 @@
 $(document).ready(function(){
 
+	jsonToSend = {
+		"action" : 'CHECKSESSION'
+	};
+
 	$.ajax({
-		url : "./data/sessionService.php",
+		url : "./data/applicationLayer.php",
 		type : "POST",
 		dataType : "json",
+		data : jsonToSend,
 		success : function(dataReceived){
-			$("h2").text(dataReceived.fName + " " + dataReceived.lName);
+			if(dataReceived.status == "SUCCESS"){
+				$("h2").text(dataReceived.fName + " " + dataReceived.lName);
+			} else {
+				alert("dataReceived was not success.");
+			}
 		},
 		error : function(errorMessage){
 			alert(errorMessage.statusText);
@@ -15,18 +24,21 @@ $(document).ready(function(){
 	});
 
 	$("#logoutButton").on("click", function(){
+		jsonToSend = {
+			"action" : 'LOGOUT'
+		};
+
 		$.ajax({
-			url : "./data/deleteSessionService.php",
+			url : "./data/applicationLayer.php",
 			type : "POST",
-			dataType : "json",
+			dataType : "text",
+			data : jsonToSend,
 			success : function(dataReceived){
-				alert(dataReceived.success);
-				window.location.replace("./index.html");
+				window.location.href = "index.html";
 			},
 			error : function(errorMessage){
 				alert(errorMessage.statusText);
 			}
-
 		});
 	});
 });

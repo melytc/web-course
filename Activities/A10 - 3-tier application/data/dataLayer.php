@@ -53,19 +53,18 @@
         if($connection != null){
             # Query to add the user to the database.
             $sql = "INSERT INTO Users (fName, lName, passwrd, username)
-                    VALUES ('$uFirstName', '$uLastName', '$uPassword', '$uUsername')";
+                    VALUES ('$uFname', '$uLname', '$uPassword', '$uName')";
 
             # Execues the query.
             $resultDB = $connection->query($sql);
             
-            if($resultDB->num_rows > 0){
+            if($resultDB){
                 $response = ["status"=>"SUCCESS"];
                 return $response;
             } else {
                 # Bad request
                 return ["status"=>"400"];
             }
-
         } else {
             return ["status" => "500"];
         }
