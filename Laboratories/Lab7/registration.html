@@ -1,0 +1,59 @@
+<html>
+	<head>
+		<title>Mr. Burger - Your order</title>
+		
+		<meta charset="utf-8">
+		<meta name="keywords" content="burger, food, delicious">
+		<meta name="author" content="Melissa Treviño">
+
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+	<body>
+        <header id="header">
+            <a href="home.html">
+                <img id="logo" src="assets/logoBox.png">
+            </a>
+            <h4 id="slogan"></h4>
+            <ul id="mainNav">
+                <li> <a id="login" href="login.html">Login</a> </li>
+                <li> <a id="logout"  href="logout.php">Logout</a> </li>
+            </ul>
+        </header>
+
+        <div class="container">
+            <h1>Register</h1>
+            <fieldset>
+                <legend>Please fill out this form with your information.</legend>
+                <div id="registerContainer">
+                    <p>
+                        First Name<br/>
+                        <input id="firstName" class="formElement" type="text" />
+                    </p>
+                     <p>
+                        Last Name<br/>
+                        <input id="lastName" class="formElement" type="text" />
+                    </p>  
+                    <p>
+                        Email<br/>
+                        <input id="email" class="formElement" type="text" />
+                    </p>  
+                    <p>
+                        Username<br/>
+                        <input id="username" class="formElement" type="text" />
+                    </p>
+                    <p>
+                        Password<br/>
+                        <input id="userPassword" class="formElement" type="password" />
+                    </p>   
+                    <p>
+                        <input type="button" id="registerButton" value="Register"/>
+                        <input type="button" id="cancelButton" value="Cancel"/>
+                    </p>      
+                </div>
+            </fieldset>
+        </div>
+        <script type="text/javascript" src="logic/jquery.js"></script>
+        <script type="text/javascript" src="logic/registration.js"></script>
+        <script type="text/javascript" src="logic/checkLogin.js"></script>
+    </body>
+</html>
