@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Documento HTML</title>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="css/styles.css" />
+        <script src="js/jquery.js" type="text/javascript"></script>
+
+    </head>
+    <body>
+        <h1> PHP Service Encrypted</h1>
+        <fieldset>
+            <legend>Login validated with PHP Service</legend>
+            <div id="loginContainer">
+                <p>
+                    Username<br/>
+                    <input id="username" class="formElement" type="text" />
+                </p>
+                <p>
+                    Password<br/>
+                    <input id="userPassword" class="formElement" type="password" />
+                </p>   
+                <p>
+                    <input type="button" id="loginButton" value="Login"/>
+                    <input type="button" id="registerButton" value="Register"/>
+                </p>      
+            </div>
+        </fieldset>
+    </body>
+
+    <script type="text/javascript">
+        $( document ).ready(function() {
+            $.ajax({
+                type: "POST",
+                url: "data/applicationLayer.php",
+                dataType: "json",
+                data: {'action':'COOKIE'},
+                contentType: 'application/x-www-form-urlencoded',
+                success: function(jsonData) {
+                    //$("#username").val(jsonData.cookieUsername);
+                },
+                error: function(errorMsg){
+                    //alert(errorMsg.statusText);
+                }
+            });
+           $("#loginButton").on("click", function(){
+                var jsonObject = {
+                    "username" : $("#username").val(),
+                    "userPassword" : $("#userPassword").val(),
+                    "action" : "LOGIN"
+                };
+
+                $.ajax({
+                    type: "POST",
+                    url: "data/applicationLayer.php",
+                    dataType: "json",
+                    data: jsonObject,
+                    contentType: 'application/x-www-form-urlencoded',
+                    success: function(jsonData) {
+                        window.location.replace("home.html");
+                       
+                    },
+                    error: function(errorMsg){
+                        alert(errorMsg.statusText);
+                    }
+                });
+           });
+            
+            $("#registerButton").on("click",function(){
+                window.location.replace("registration.html");
+            });
+        });
+    </script>
+</html>
+
