@@ -1,9 +1,9 @@
 <?php
 
     # Instruction for debugging.
-    error_reporting(E_ALL);
+    /*error_reporting(E_ALL);
     ini_set('display_errors', 1);
-    ini_set('log_errors', 1);
+    ini_set('log_errors', 1);*/
 
     # connectionDB
     # Function to connect to the database.
@@ -145,6 +145,30 @@
         } else {
              # Database connection was unsuccessful.
              return ["status" => "500"];
+        }
+    }
+
+    # dbValidateUser
+    # Function to validate that a username exists in the database.
+    function dbValidateUser($uName){
+        $connection = connectionDB();
+
+        if ($connection != null) {
+            $sql = "SELECT * FROM Users WHERE username = '$uName'";
+            $result = $connection->query($sql);
+
+            # The username exists.
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()){
+                    return array("firstname" => $row['fName'], "lastname" => $row['lName'], "passwrd" => $row['passwrd'], "username" => $row['username'], "status" => "SUCCESS",);
+                }
+            } else {
+                # The user doesn't exists in the Database
+                return ["status" => "406"];
+            }
+        } else {
+            # Connection to Database was not successful
+            return ["status" => "500"];
         }
     }
 ?>

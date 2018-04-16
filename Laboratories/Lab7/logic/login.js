@@ -37,6 +37,7 @@ $(document).ready(function(){
 				ContentType : "application/json",
 				dataType : "json",
 				success : function(dataReceived){
+					console.log("Login success function.");
 					if(dataReceived.status == 'SUCCESS') {
 						alert("Welcome back " + dataReceived.firstname + " " + dataReceived.lastname);
 						window.location.href = "./home.html";
@@ -45,6 +46,7 @@ $(document).ready(function(){
 					}
 				},
 				error : function(errorMessage){
+					console.log("Login failed.");
 					alert(errorMessage.statusText);
 				}
 			});

@@ -15,17 +15,20 @@ $(document).ready(function(){
 			url: "./data/applicationLayer.php",
 			type: "POST",
 			data : jsonToSend,
-			ContentType : "application/json",
 			dataType : "json",
+			ContentType : "application/json",
 			success : function(dataReceived){
 				if(dataReceived.status == "SUCCESS"){
+					console.log("Success");
 					alert("You are registered!");
 					window.location.replace("home.html");	
 				} else {
+					console.log("Error in registration");
 					alert("There was an error when registering, please try again.");
 				}
 			},
 			error : function(errorMsg){
+				console.log("Error function :(");
 				alert(errorMsg.statusText);
 			}
 		});
