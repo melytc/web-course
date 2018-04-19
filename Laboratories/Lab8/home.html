@@ -1,0 +1,184 @@
+<html>
+	<head>
+		<title>Mr. Burger - Your order</title>
+		<meta charset="utf-8">
+		<meta name="keywords" content="burger, food, delicious">
+		<meta name="author" content="Melissa Treviño">
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+	<body>
+		<header id="header">
+			<img id="logo" alt="Mr. Burger Logo" src="assets/logoBox.png">
+			<h4 id="slogan">
+				<!-- Dynamically loaded via AJAX -->
+			</h4>
+			<ul id="mainNav">
+				<li> <a id="login" href="login.html">Login</a> </li>
+				<li> <a id="logout"  href="logout.php">Logout</a> </li>
+				<li> <a id="register" href="registration.html">Register</a> </li>
+			</ul>
+			<p id="userLogged"></p>
+			<ul id="homeMenu">
+				<li class="orderNow selected">Order Now</li>
+				<li class="leaveComment">Leave a comment</li>
+				<li class="userOrders">My orders</li>
+			</ul>
+		</header>
+
+		<div class="container">
+			
+			<!-- Order Now sesction -->
+			<div id="orderNow" class="elementSelected">
+				<div class="column">
+
+					<h5>Choose a type of burger:</h5>
+
+					<!-- Loaded in orderForm.js -->
+					<span id="burgerTypeData"></span>
+					
+					<span id="errorBurgerType" class="errorMessage hiddenMessage">Please choose a burger.</span>
+		
+					<h5>Choose a type of bread:</h5>
+					<!-- Loaded in orderForm.js -->
+					<span id="breadTypeData"></span>
+
+					<span id="errorBreadType" class="errorMessage hiddenMessage">Please choose a bread.</span>
+					
+					<h5>Wanna add...</h5>
+					<label><input type="checkbox" name="burgerCondiment" value="mayo">Mayo</label>
+					<label><input type="checkbox" name="burgerCondiment" value="ketchup">Ketchup</label>
+					<label><input type="checkbox" name="burgerCondiment" value="mustard">Mustard</label>
+		
+					<h5>Sauce?</h5>
+					<!-- Loaded in orderForm.js -->
+					<span id="burgerSauceData"></span>		
+
+					<h5>Toppings?</h5>
+					<!-- Loaded in orderForm.js -->
+					<span id="burgerToppingsData"></span>
+		
+					<h5>Choose the size of your burger:</h5>
+					<!-- Loaded in orderForm.js -->
+					<span id="burgerSizeData"></span>
+					<span id="errorBurgerSize" class="errorMessage hiddenMessage">Please choose a size.</span>
+		
+					<h5>Wanna add some fries with that?</h5>
+					<label><input type="checkbox" id="addFries">Hell yeah.</label>
+		
+					<h5>How many burgers?</h5>
+					<input type="text" id="burgerQuantity"> <br>
+					<span id="errorBurgerOrders" class="errorMessage hiddenMessage">Please choose a quantity.</span>
+
+					<div id="buttonsDiv">
+						<h5>Looks good!</h5>
+						<button id="submitButton">Add to cart</button>
+						<button id="restartButton">Reset order</button>
+					</div>
+				</div>
+
+				<div class="column">
+					<div id="orderSummary">
+						<blockquote>
+							<h3>Your order summary:</h3>
+							<div class="summary" id="burgerSummary"></div>
+							<div class="summary" id="condimentsSummary"></div>
+							<div class="summary" id="saucesSummary"></div>		
+							<h5 id="toppingHeader">Toppings:</h4>
+							<ul id="toppingsSummary"> </ul>
+							<div class="summary" id="friesSummary"></div>	
+						</blockquote>
+					</div>
+				</div>
+			</div>
+
+			<!-- Login Modal -->
+			<div id="loginModal" class="hiddenElement">
+				<form action="#" id="loginModalForm">
+					<fieldset>
+						<p>Sign in!</p>
+						<div>
+							<label for="modalUsername">Username</label>
+							<input id="modalUsername" class="formElement" type="text" />
+						</div>
+						<div>
+							<label for="modalPassword">Password</label>
+							<input id="modalPassword" class="formElement" type="password" />
+						</div>
+						<div><input type="submit" id="modalLoginButton" value="Login"/></div>
+					</fielset>
+				</form>
+			</div>
+
+			<!-- Comments sesction -->
+			<div id="leaveComment" class="hiddenElement">
+				<form action="#" class="commentForm">
+					<fieldset>
+						<legend>Leave a comment here:</legend>
+						<div id="name">
+							<label for="nameText"><strong>Name</strong></label>
+							<span id="nameError" class="hiddenMessage errorMessage">Please type your name.</span>
+							<input id="nameText" type="text">
+						</div>
+						<div id="email">
+							<label for="emailText"><strong>Email</strong></label>
+							<span id="emailError" class="hiddenMessage errorMessage">Please type your email.</span>
+							<input id="emailText" type="text" name="email">
+						</div>
+						<div id="comment">
+							<label for="commentText"><strong>Comment</strong></label>
+							<legend>Please do not use apostrophes!</legend>
+							<span id="commentError" class="hiddenMessage errorMessage">Please type your comment.</span>
+							​<textarea id="commentText"></textarea>
+						</div>
+						<div id="submitComment">Submit</div>
+					</fieldset>
+				</form>
+
+				<section class="commentLog">
+					<strong>Comment log</strong>
+					<div id="commentLogContainer">
+						<table id="commentLogTable">
+							<thead>
+								<tr>
+									<th>Name</th>
+									<th>Email</th>
+									<th>Comment</th>
+								</tr>
+							</thead>
+							<tbody>
+								<!-- Comments are dynamically loaded via AJAX -->
+							</tbody>
+						</table>
+					</div>
+				</section>
+			</div>
+
+			<!-- My Orders sesction -->
+			<div id="userOrders" class="hiddenElement">
+				<section class="userOrdersSection">
+					<table id="userOrdersTable">
+						<thead>
+							<tr>
+								<th>Order id</th>
+								<th>Details</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- Orders are dynamically loaded via AJAX -->
+						</tbody>
+					</table>
+				</section>
+			</div>
+		</div>
+		
+		<footer></footer>
+
+		<script type="text/javascript" src="logic/jquery.js"></script>
+		<script type="text/javascript" src="logic/home.js"></script>
+		<script type="text/javascript" src="logic/orderForm.js"></script>
+		<script type="text/javascript" src="logic/commentForm.js"></script>
+		<script type="text/javascript" src="logic/checkLogin.js"></script>
+		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	</body>
+</html>
