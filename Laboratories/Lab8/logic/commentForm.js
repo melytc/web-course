@@ -27,13 +27,13 @@ $(document).ready(function(){
 });
 
 function showModal(){
-	$("#loginModal").dialog({modal: true, position:{ my: 'top', at: 'top+180'}});
+	$("#loginModal").dialog({modal: true, position: { my: 'top', at: 'top+180' }});
 }
 
 // Function to load comment data from xml file.
 function loadComments(){
 
-	var jsonToSend ={
+	var jsonToSend = {
 		"action" : 'LOADCOMMENTS'
 	};
 
@@ -43,7 +43,7 @@ function loadComments(){
 		data : jsonToSend,
 		ContentType : "application/json",
 		dataType: "json",
-		success: function (dataReceived){
+		success: function (dataReceived) {
 			if(dataReceived.status == 'SUCCESS'){
 				var tableElements = "";
 				$("#commentLogTable tbody tr").remove();
@@ -62,11 +62,11 @@ function loadComments(){
 				}
 
 				$("#commentLogTable tbody").append(tableElements);
-			}else{
+			} else {
 				console.log("loadComments else statement in success function.");
 			}
 		}, 
-		error: function (error){
+		error: function (error) {
 		}
 	});
 }
@@ -87,21 +87,21 @@ function validateComment(){
 	// Validation of name.
 	if(nameError){
 		$("#nameError").removeClass("hiddenMessage");
-	}else{
+	} else {
 		$("#nameError").addClass("hiddenMessage");
 	}
 
 	// Validation of user email.
 	if(emailError){
 		$("#emailError").removeClass("hiddenMessage");
-	}else{
+	} else {
 		$("#emailError").addClass("hiddenMessage");
 	}
 
 	// Validation of user comment.
 	if(commentError){
 		$("#commentError").removeClass("hiddenMessage");
-	}else{
+	} else {
 		$("#commentError").addClass("hiddenMessage");
 	}
 
@@ -131,7 +131,7 @@ function postComment(username, fromModal){
 			if(dataReceived.status == 'SUCCESS'){
 				alert("Comment posted!");
 				loadComments();  
-			}else{
+			} else {
 				alert("Sorry, error posting comments.");
 			}
 			
@@ -142,12 +142,13 @@ function postComment(username, fromModal){
 	});
 }
 
-function sendLoginInfoToServer(){
+
+function sendLoginInfoToServer() {
 	var username = $("#modalUsername").val();
 	var password = $("#modalPassword").val();
 
 	if (username != "" && password != ""){
-		var jsonToSend ={
+		var jsonToSend = {
 			"uName" : username,
 			"uPassword" : password,
 			"rememberMe" : false,
@@ -163,7 +164,7 @@ function sendLoginInfoToServer(){
 				if(dataReceived.status == 'SUCCESS'){
 					$("#loginModal").dialog("close");
 					postComment(username, true);	
-				}else{
+				} else {
 					alert("Incorrect credentials. Please try again.");
 				}
 			},
@@ -176,7 +177,7 @@ function sendLoginInfoToServer(){
 
 // Function to validate that there is a current session.
 function checkSession(){
-	jsonToSend ={
+	jsonToSend = {
 		"action" : 'CHECKSESSION'
 	};
 	
@@ -188,7 +189,7 @@ function checkSession(){
 		success : function(dataReceived){
 			if(dataReceived.fName){
 				postComment(dataReceived.uName, false);
-			}else{
+			} else {
 				showModal();
 			}
 		},

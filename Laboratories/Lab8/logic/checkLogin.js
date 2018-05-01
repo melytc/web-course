@@ -1,6 +1,9 @@
 // Check if the user is logged in (hide login button).
-$(document).ready(function(){
-	jsonToSend ={
+$(document).ready(checkLogin());
+var isUserLoggedin = false;
+
+function checkLogin(){
+	jsonToSend = {
 		"action" : 'CHECKSESSION'
 	};
 	
@@ -14,17 +17,19 @@ $(document).ready(function(){
 				// User is not logged in.
 				$("#login").css("display", "block");
 				$("#logout").css("display", "none");
-				$("#userLogged").html(" ")
-				$('.userOrders').css("display", "none");;
-			}else{
+				$("#userLogged").html(" ");
+				$(".myHistory").css("display", "none");
+				isUserLoggedin = false;
+			} else {
 				// User is logged in.
 				$("#login").css("display", "none");
 				$("#logout").css("display", "block");
 				$("#userLogged").html("What's up, <strong>" + dataReceived.fName + "</strong>");
-				$('.userOrders').css("display", "block");
+				$(".myHistory").css("display", "block");
+				isUserLoggedin = true;
 			}
 		},
 		error : function(errorMessage){
 		}
 	});
-});
+};

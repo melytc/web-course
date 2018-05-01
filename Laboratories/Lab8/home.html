@@ -22,13 +22,12 @@
 			<ul id="homeMenu">
 				<li class="orderNow selected">Order Now</li>
 				<li class="leaveComment">Leave a comment</li>
-				<li class="userOrders">My orders</li>
+				<li class="myHistory">My history</li>
 			</ul>
 		</header>
 
 		<div class="container">
-			
-			<!-- Order Now sesction -->
+			<!-- Order now section -->
 			<div id="orderNow" class="elementSelected">
 				<div class="column">
 
@@ -71,7 +70,7 @@
 					<span id="errorBurgerOrders" class="errorMessage hiddenMessage">Please choose a quantity.</span>
 
 					<div id="buttonsDiv">
-						<h5>Looks good!</h5>
+						<div style="display: inline">
 						<button id="submitButton">Add to cart</button>
 						<button id="restartButton">Reset order</button>
 					</div>
@@ -92,84 +91,74 @@
 				</div>
 			</div>
 
-			<!-- Login Modal -->
-			<div id="loginModal" class="hiddenElement">
-				<form action="#" id="loginModalForm">
-					<fieldset>
-						<p>Sign in!</p>
-						<div>
-							<label for="modalUsername">Username</label>
-							<input id="modalUsername" class="formElement" type="text" />
-						</div>
-						<div>
-							<label for="modalPassword">Password</label>
-							<input id="modalPassword" class="formElement" type="password" />
-						</div>
-						<div><input type="submit" id="modalLoginButton" value="Login"/></div>
-					</fielset>
-				</form>
-			</div>
-
-			<!-- Comments sesction -->
-			<div id="leaveComment" class="hiddenElement">
-				<form action="#" class="commentForm">
-					<fieldset>
-						<legend>Leave a comment here:</legend>
-						<div id="name">
-							<label for="nameText"><strong>Name</strong></label>
-							<span id="nameError" class="hiddenMessage errorMessage">Please type your name.</span>
-							<input id="nameText" type="text">
-						</div>
-						<div id="email">
-							<label for="emailText"><strong>Email</strong></label>
-							<span id="emailError" class="hiddenMessage errorMessage">Please type your email.</span>
-							<input id="emailText" type="text" name="email">
-						</div>
-						<div id="comment">
-							<label for="commentText"><strong>Comment</strong></label>
-							<legend>Please do not use apostrophes!</legend>
-							<span id="commentError" class="hiddenMessage errorMessage">Please type your comment.</span>
-							​<textarea id="commentText"></textarea>
-						</div>
-						<div id="submitComment">Submit</div>
-					</fieldset>
-				</form>
-
-				<section class="commentLog">
-					<strong>Comment log</strong>
-					<div id="commentLogContainer">
-						<table id="commentLogTable">
-							<thead>
-								<tr>
-									<th>Name</th>
-									<th>Email</th>
-									<th>Comment</th>
-								</tr>
-							</thead>
-							<tbody>
-								<!-- Comments are dynamically loaded via AJAX -->
-							</tbody>
-						</table>
+		</div>
+		<!-- Login Modal -->
+		<div id="loginModal" class="hiddenElement">
+			<form action="#" id="loginModalForm">
+				<fieldset>
+					<p>Sign in to post a comment!</p>
+					<div>
+						<label for="modalUsername">Username</label>
+						<input id="modalUsername" class="formElement" type="text" />
 					</div>
-				</section>
-			</div>
+					<div>
+						<label for="modalPassword">Password</label>
+						<input id="modalPassword" class="formElement" type="password" />
+					</div>
+					<div><input type="submit" id="modalLoginButton" value="Login"/></div>
+				</fielset>
+			</form>
+		</div>
+		
+		<!-- Comments section -->
+		<div id="leaveComment" class="hiddenElement">
+			<form action="#" class="commentForm">
+				<fieldset>
+					<legend>Leave a comment here:</legend>
+					<div id="name">
+						<label for="nameText"><strong>Name</strong></label>
+						<span id="nameError" class="hiddenMessage errorMessage">Please type your name.</span>
+						<input id="nameText" type="text">
+					</div>
+					<div id="email">
+						<label for="emailText"><strong>Email</strong></label>
+						<span id="emailError" class="hiddenMessage errorMessage">Please type your email.</span>
+						<input id="emailText" type="text" name="email">
+					</div>
+					<div id="comment">
+						<label for="commentText"><strong>Comment</strong></label>
+						<legend>Please do not use apostrophes!</legend>
+						<span id="commentError" class="hiddenMessage errorMessage">Please type your comment.</span>
+						​<textarea id="commentText"></textarea>
+					</div>
+					<div id="submitComment">Submit</div>
+				</fieldset>
+			</form>
 
-			<!-- My Orders sesction -->
-			<div id="userOrders" class="hiddenElement">
-				<section class="userOrdersSection">
-					<table id="userOrdersTable">
+			<section class="commentLog">
+				<strong>Comment log</strong>
+				<div id="commentLogContainer">
+					<table id="commentLogTable">
 						<thead>
 							<tr>
-								<th>Order id</th>
-								<th>Details</th>
+								<th>Name</th>
+								<th>Email</th>
+								<th>Comment</th>
 							</tr>
 						</thead>
 						<tbody>
-							<!-- Orders are dynamically loaded via AJAX -->
+							<!-- Comments are dynamically loaded via AJAX -->
 						</tbody>
 					</table>
-				</section>
-			</div>
+				</div>
+			</section>
+		</div>
+		
+		<!-- My history section -->
+		<div id="myHistory" class="hiddenElement">
+			<h3>Your previous orders:</h3>
+			<ul id="previousOrders">
+			</ul>
 		</div>
 		
 		<footer></footer>

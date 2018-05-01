@@ -294,3 +294,17 @@ footer{
 #mainNav li {
 	display: inline-block;
 }
+
+/* 
+My history section ------------------- */
+.myHistory {
+	display: none;
+}
+
+.previousOrderList{
+	margin-bottom: 70px;
+}
+
+#previousOrders blockquote {
+	margin-left: 0px;
+}

@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    var jsonToSend ={
+    var jsonToSend = {
 		"action" : 'CHECKCOOKIE'
 	}
     // AJAX call to check if we had to remember a username (the remember cookie is set).
@@ -13,8 +13,8 @@ $(document).ready(function(){
 			$("#username").val(dataReceived.cookieUsername);
 		},
 		error: function(errorMessage){
-     }
- });
+        }
+    });
         
     $("#loginButton").on("click", function(){
 
@@ -23,7 +23,7 @@ $(document).ready(function(){
 		var remember = $("#rememberBox").is(":checked");
 
 		if (username != "" && password != ""){
-			var jsonToSend ={
+			var jsonToSend = {
 				"uName" : username,
 				"uPassword" : password,
 				"rememberMe" : remember,
@@ -37,16 +37,14 @@ $(document).ready(function(){
 				ContentType : "application/json",
 				dataType : "json",
 				success : function(dataReceived){
-					console.log("Login success function.");
-					if(dataReceived.status == 'SUCCESS'){
+					if(dataReceived.status == 'SUCCESS') {
 						alert("Welcome back " + dataReceived.firstname + " " + dataReceived.lastname);
 						window.location.href = "./home.html";
-					}else{
+					} else {
 						alert('We were not able to log you in. Please try again.');
 					}
 				},
 				error : function(errorMessage){
-					console.log("Login failed.");
 					alert(errorMessage.statusText);
 				}
 			});
